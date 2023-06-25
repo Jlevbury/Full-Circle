@@ -1,0 +1,43 @@
+#box-1 {
+  height: 100vh;
+  width: 100%;
+  background-image: url(../../assets/img/i1.jpg?h=15859b49232c988342b31b2f4d39a899);
+  background-size: cover;
+  display: table;
+  background-attachment: fixed;
+}
+
+#box-2 {
+  height: 100vh;
+  width: 100%;
+  background-image: url(../../assets/img/mountains__2_.png?h=26f5caf60129c77f9dcc3721bbfe085b);
+  background-size: cover;
+  display: table;
+  background-attachment: fixed;
+}
+
+#box-3 {
+  height: 100vh;
+  width: 100%;
+  background-image: url(../../assets/img/i3.jpg?h=73b995e409965baa1af1023c621f74e7);
+  background-size: cover;
+  display: table;
+  background-attachment: fixed;
+}
+
+h1 {
+  font-family: arial black;
+  font-size: 50px;
+  color: white;
+  margin: 0px;
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+#box-2 {
+}
+
+.D4 {
+}
+
