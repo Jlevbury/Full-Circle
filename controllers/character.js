@@ -56,8 +56,8 @@ router.post('/create', (req, res) => {
 
 
 router.get('/search', (req, res) => {
-    const { term } = req.query;
-    
+    let { term } = req.query;
+
 //Make Lowercase
     term = term.toLowerCase();
 

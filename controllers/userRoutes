@@ -1,0 +1,35 @@
+const router = require('express').Router();
+const { User } = require('../../models');
+const passport = require('passport')
+
+router.use(express.urlencoded({ extended: false }));
+
+const initializePassport = require('./utils/passport-config');
+const flash = require('express-flash');
+const session = require('express-session')
+app.use(flash());
+app.use(session({
+    secret: process.env.SESSION_SECRET,
+    cookie: {},
+    resave: false,
+    saveUninitialized: false,
+    store: new SequelizeStore({
+      db: sequelize
+    })
+  }));
+
+  app.use(passport.initialize());
+  app.use(passport.session());
+
+initializePassport(
+    passport, 
+    email => {
+    User.find(user => user.email === email)
+});
+
+
+app.post('/login', passport.authenticate('local',{
+  successRedirect: '/character',
+  failureRedirect: '/',
+  failureFlash: true
+}))

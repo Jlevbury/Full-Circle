@@ -1,3 +1,7 @@
+if (process.env.NODE_ENV !== 'production') {
+    require('dotenv').config()
+};
+
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require ('path');
@@ -5,8 +9,18 @@ const exphbs = require('express-handlebars');
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+const passport= require('passport');
+
+// PASSWORD SETUP
+
+
 // Database
 const sequelize = require('./config/connection');
+
+// Session
+
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
+
 
 // Test DB
 sequelize.authenticate()
@@ -18,6 +32,7 @@ sequelize.authenticate()
         app.listen(PORT, console.log(`Server started on port ${PORT}`))
     );
 
+app.use(express.urlencoded({ extended: true }));
 // Handlebars
 app.engine('handlebars', exphbs({ defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
