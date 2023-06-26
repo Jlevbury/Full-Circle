@@ -2,15 +2,16 @@ const express = require('express');
 const router = express.Router();
 const db = require('../config/connection');
 const Character = require('../models/Character');
+const Sequelize = require('sequelize');
+const Op = Sequelize.Op;
 
 router.get('/',(req, res) => 
 Character.findAll()
-    .then(characters => {
-        console.log(characters)
-        res.render('characters', {
+    .then(characters => 
+            res.render('characters', {
             characters
         })
-    })
+    )
     
     .catch(err => console.log(err))
 );
@@ -20,7 +21,7 @@ Character.findAll()
 router.get('/create', (req,res) => res.render('create'));
 
 router.post('/create', (req, res) => {
-    let { character_name, character_description } = req.body;
+    const { character_name, character_description } = req.body;
     let errors = [];
     //Validate fields
     
@@ -50,5 +51,22 @@ router.post('/create', (req, res) => {
         .catch(err => console.log(err))
     }
 })
+
+// Search for characters
+
+
+router.get('/search', (req, res) => {
+    const { term } = req.query;
+    
+//Make Lowercase
+    term = term.toLowerCase();
+
+    Character.findAll({ where: {
+        character_description: { [Op.like]: '%' + term + '%' }
+    } })
+  
+    .then(characters => res.render('characters', { characters }))
+    .catch(err => console.log(err))
+});
 
 module.exports = router;
