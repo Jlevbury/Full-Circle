@@ -1,1 +1,13 @@
 <H3>CHARACTERS!</H3>
+
+{{#each characters}}
+
+
+<h3>{{dataValues.character_name}}</h3>
+<p>{{dataValues.character_description}}</p>
+
+{{else}}
+
+<p>You have not created any characters</p>
+
+{{/each}}
