@@ -11,12 +11,13 @@ Character.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    character_name: {
+    name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    character_description: {
+    class: {
       type: DataTypes.STRING,
+      allowNull: false,
     },
     user_id: {
       type: DataTypes.INTEGER,
