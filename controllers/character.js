@@ -4,8 +4,9 @@ const db = require('../config/connection');
 const Character = require('../models/Character');
 const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
+const { ensureAuthenticated } = require('../config/auth');
 
-router.get('/',(req, res) => 
+router.get('/', ensureAuthenticated, (req, res) => 
 Character.findAll()
     .then(characters => {
             res.render('characters', {
@@ -18,7 +19,7 @@ Character.findAll()
     .catch(err => console.log(err))
 );
 
-router.get('/:id', (req, res) => {
+router.get('/:id', ensureAuthenticated, (req, res) => {
 Character.findByPk(req.params.id)
 .then(characters => {
     res.render('singleCharacter', {
@@ -30,7 +31,7 @@ Character.findByPk(req.params.id)
 
 //Display Character Creation Form
 
-router.get('/create', (req,res) => res.render('create'));
+router.get('/create', ensureAuthenticated, (req,res) => res.render('create'));
 
 
 
@@ -68,7 +69,7 @@ router.post('/create', (req, res) => {
 // Search for characters
 
 
-router.get('/search', (req, res) => {
+router.get('/search', ensureAuthenticated, (req, res) => {
     let { term } = req.query;
     
 //Make Lowercase

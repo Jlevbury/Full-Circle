@@ -3,6 +3,11 @@ const path = require ('path');
 const exphbs = require('express-handlebars');
 const app = express();
 const PORT = process.env.PORT || 3001;
+const flash = require('connect-flash')
+const session = require('express-session')
+const passport = require('passport')
+// Passport Config
+require('./config/passport')(passport);
 
 // Database
 const sequelize = require('./config/connection');
@@ -24,12 +29,46 @@ app.set('view engine', 'handlebars');
 // Body parser
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+
+// Express Session
+const sess = {
+    secret: 'Super secret secret',
+    cookie: {
+      maxAge: 300000,
+      httpOnly: true,
+      secure: false,
+      sameSite: 'strict',
+    },
+    resave: true,
+    saveUninitialized: true,
+  };
+  
+  app.use(session(sess));
+
+// Passport Middleware
+app.use(passport.initialize());
+app.use(passport.session());
+
+  // Connect Flash
+  app.use(flash());
+
+  // Global Vars
+  app.use((req, res, next) => {
+    res.locals.success_msg = req.flash('success_msg')
+    res.locals.error_msg = req.flash('error_msg')
+    res.locals.error = req.flash('error')
+    next();
+  })
+
+  
+
 // Set static folder
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Index route - Can replace layout with a different one
 app.get('/', (req, res) => res.render('homepage'));
 
+app.use('/', require('./controllers/index'))
 app.use('/character', require('./controllers/character'));
 app.use('/users', require('./controllers/userRoutes'));
 
