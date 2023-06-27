@@ -8,9 +8,10 @@ const Op = Sequelize.Op;
 router.get('/',(req, res) => 
 Character.findAll()
     .then(characters => {
-            console.log(characters);
             res.render('characters', {
-            characters
+            characters: characters.map(character => Character.get({
+                plain: true
+            }))
             })
         })
     
@@ -18,16 +19,14 @@ Character.findAll()
 );
 
 router.get('/:id', (req, res) => {
-
 Character.findByPk(req.params.id)
-.then (characters => {
-    console.log(characters)
+.then(characters => {
     res.render('singleCharacter', {
         characters
-})
-})
-}
-);
+        })
+    })
+    .catch(err => console.log(err))
+});
 
 //Display Character Creation Form
 
