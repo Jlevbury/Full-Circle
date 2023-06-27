@@ -7,18 +7,33 @@ const Op = Sequelize.Op;
 
 router.get('/',(req, res) => 
 Character.findAll()
-    .then(characters => 
+    .then(characters => {
+            console.log(characters);
             res.render('characters', {
             characters
+            })
         })
-    )
     
     .catch(err => console.log(err))
+);
+
+router.get('/:id', (req, res) => {
+
+Character.findByPk(req.params.id)
+.then (characters => {
+    console.log(characters)
+    res.render('singleCharacter', {
+        characters
+})
+})
+}
 );
 
 //Display Character Creation Form
 
 router.get('/create', (req,res) => res.render('create'));
+
+
 
 router.post('/create', (req, res) => {
     const { character_name, character_description } = req.body;
@@ -57,7 +72,7 @@ router.post('/create', (req, res) => {
 
 router.get('/search', (req, res) => {
     let { term } = req.query;
-
+    
 //Make Lowercase
     term = term.toLowerCase();
 

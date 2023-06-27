@@ -2,8 +2,9 @@
 
 {{#each characters}}
 
-
+<a class="btn btn-primary ms-md-2" role="button" href="/character/{{dataValues.id}}">
 <h3>{{dataValues.character_name}}</h3>
+</a>
 <p>{{dataValues.character_description}}</p>
 
 {{else}}
@@ -21,6 +22,9 @@
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
+<form action="/character">
+<button type="submit" class="btn btn-primary">Clear</button>
+</form>
 
 <h1>Let's build a character</h1>
 {{#each errors}}
@@ -30,6 +34,7 @@
   <div class="mb-3">
     <label for="Name" class="form-label">Character Name</label>
     <input type="Character Name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="character_name" value={{character_name}}>
+    
   </div>
   <div class="mb-3">
     <label for="Description" class="form-label">Character Description</label>
