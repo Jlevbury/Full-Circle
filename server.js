@@ -1,5 +1,4 @@
 const express = require('express');
-const bodyParser = require('body-parser');
 const path = require ('path');
 const exphbs = require('express-handlebars');
 const app = express();
@@ -23,15 +22,16 @@ app.engine('handlebars', exphbs({ defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
 // Body parser
-app.use(bodyParser.urlencoded({ extended: false }));
-
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
 // Set static folder
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Index route - Can replace layout with a different one
-app.get('/', (req, res) => res.render('index', { layout: main}));
+app.get('/', (req, res) => res.render('homepage'));
 
 app.use('/character', require('./controllers/character'));
+app.use('/users', require('./controllers/userRoutes'));
 
 
 

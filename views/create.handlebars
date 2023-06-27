@@ -5,11 +5,11 @@
 <form action="/character/create" method="POST">
   <div class="mb-3">
     <label for="Name" class="form-label">Character Name</label>
-    <input type="Character Name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="character_name" value={{character_name}}>
+    <input type="Character Name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="name" value={{dataValues.name}}>
   </div>
   <div class="mb-3">
     <label for="Description" class="form-label">Character Description</label>
-    <input type="Character Description" class="form-control" id="exampleInputPassword1" name="character_description" value={{character_description}}>
+    <input type="Character Description" class="form-control" id="exampleInputPassword1" name="character_class" value={{dataValues.character_class}}>
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>

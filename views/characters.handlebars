@@ -2,10 +2,10 @@
 
 {{#each characters}}
 
-<a class="btn btn-primary ms-md-2" role="button" href="/character/{{dataValues.id}}">
+<a class="btn btn-primary ms-md-2" role="button" href="/character/{{id}}">
 <h3>{{name}}</h3>
 </a>
-<p>{{class}}</p>
+<p>{{character_class}}</p>
 
 {{else}}
 
@@ -13,15 +13,3 @@
 
 {{/each}}
 
-<h1>Find Your Character</h1>
-
-<form action="/character/search">
-  <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Find your adventurer!</label>
-    <input type="search" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="term">
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
-<form action="/character">
-<button type="submit" class="btn btn-primary">Clear</button>
-</form>

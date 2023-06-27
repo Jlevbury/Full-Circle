@@ -9,7 +9,7 @@ router.get('/',(req, res) =>
 Character.findAll()
     .then(characters => {
             res.render('characters', {
-            characters: characters.map(character => Character.get({
+            characters: characters.map(character => character.get({
                 plain: true
             }))
             })
@@ -35,31 +35,30 @@ router.get('/create', (req,res) => res.render('create'));
 
 
 router.post('/create', (req, res) => {
-    const { character_name, character_description } = req.body;
+    const { name, character_class } = req.body;
     let errors = [];
     //Validate fields
     
-    if(!character_name) {
+    if(!name) {
         errors.push({ text: 'Please add a character name'})
     }
-    if(!character_description) {
+    if(!character_class) {
         errors.push({ text: 'Please add a character description'})
     }
 
     //Check for errors
     if(errors.length > 0) {
-        console.log(req.body)
         console.log('error');
         res.render('create', {
             errors,
-            character_name,
-            character_description
+            name,
+            character_class
         })
     } else {
-        console.log(req.body);
+        
         Character.create({
-            character_name,
-            character_description
+            name,
+            character_class
         })
         .then(characters => res.redirect('/character'))
         .catch(err => console.log(err))
@@ -76,7 +75,7 @@ router.get('/search', (req, res) => {
     term = term.toLowerCase();
 
     Character.findAll({ where: {
-        character_description: { [Op.like]: '%' + term + '%' }
+        character_class: { [Op.like]: '%' + term + '%' }
     } })
   
     .then(characters => res.render('characters', { characters }))

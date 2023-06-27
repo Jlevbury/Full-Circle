@@ -1,14 +1,14 @@
 [
   {
     "name": "Bing Bong the Archer",
-    "class": "I'm an archer and such"
+    "character_class": "I'm an archer and such"
   },
   {
     "name": "Marrrrrg",
-    "class": "I'm not really good at coming up with names."
+    "character_class": "I'm not really good at coming up with names."
   },
   {
     "name": "Hector the well-endowed",
-    "class": "I was made with Troy in mind"
+    "character_class": "I was made with Troy in mind"
   }
 ]
