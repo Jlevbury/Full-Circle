@@ -3,8 +3,9 @@ const router = express.Router();
 const { ensureAuthenticated } = require('../config/auth');
 // Welcome Page
 router.get('/', (req, res) => {
-    res.render('homepage')
+    res.render('homepage', { title: 'homepage', bgImage: '/public/assets/img/mountains__2_.png' })
 });
+
 
 // Dashboard
 
