@@ -10,7 +10,7 @@ router.get('/logout', (req, res) => res.render('index'));
 //Register Page
 router.get('/register', (req, res) => res.render('register'));
 
-//Register Hanndle
+//Register Handle
 router.post('/register', (req, res) => {
    const {name, email, password} = req.body;
    let errors = [];
