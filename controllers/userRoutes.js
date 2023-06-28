@@ -5,8 +5,6 @@ const bcrypt = require('bcrypt');
 const passport = require('passport')
 
 
-router.get('/logout', (req, res) => res.render('index'));
-
 //Register Page
 router.get('/register', (req, res) => res.render('register'));
 
@@ -72,11 +70,17 @@ router.post('/register', (req, res) => {
 
 // Login Handle
 
-router.get('/login', (req, res) => res.render('login',
-{ bgImage: '/public/assets/img/other__11_.png' }));
-
+router.get('/login', (req, res) => {
+    const {email, password} = req.body;
+    let errors = [];
+    res.render('login',
+    { bgImage: '/public/assets/img/other__11_.png',
+    email,
+    password });
+});
 
 router.post('/login', (req, res, next) => {
+    console.log(req)
     passport.authenticate('local', {
         successRedirect: '/dashboard',
         failureRedirect: '/users/login',
@@ -85,7 +89,6 @@ router.post('/login', (req, res, next) => {
 })
 
 // Logout Handle
-
 
 router.post('/logout', function(req, res, next) {
     req.logout(function(err) {

@@ -6,6 +6,9 @@ const PORT = process.env.PORT || 3001;
 const flash = require('connect-flash')
 const session = require('express-session')
 const passport = require('passport')
+const routes = require('./controllers')
+
+
 // Passport Config
 require('./config/passport')(passport);
 
@@ -56,7 +59,7 @@ app.use(passport.session());
   app.use((req, res, next) => {
     res.locals.success_msg = req.flash('success_msg')
     res.locals.error_msg = req.flash('error_msg')
-    res.locals.success = req.flash('success')
+    res.locals.error = req.flash('error')
     next();
   })
 
@@ -76,7 +79,5 @@ app.get('login', (req, res) => {
 });
 
 
-app.use('/', require('./controllers/index'));
-app.use('/character', require('./controllers/character'));
-app.use('/users', require('./controllers/userRoutes'));
+app.use(routes);
 

@@ -5,8 +5,42 @@ const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
 const { ensureAuthenticated } = require('../config/auth');
 
-router.get('/', (req, res) => 
-Character.findAll()
+
+router.get('/create', (req,res) =>  {
+    res.render('create')
+  
+});
+
+router.get('/search', (req,res) =>  {
+    res.render('search');
+    
+   // localhost:3001/characters/?search=archer = Search term
+});
+
+router.get('/search', (req, res) => {
+    console.log(req.params);
+    console.log(req.query)
+//Make Lowercase
+    term = term.toLowerCase();
+
+    Character.findAll({ where: {
+        character_class: { [Op.like]: '%' + term + '%' }
+    } })
+  
+    .then(characters => res.render('characters', { characters }))
+    .catch(err => console.log(err))
+});
+
+
+
+router.get('/', async (req, res) => {
+    let { search } = req.query
+    if(search) {
+        Character.findAll({ where: {
+            character_class: { [Op.like]: '%' + term + '%' }
+        } })
+    } else {
+await Character.findAll() 
     .then(characters => {
             res.render('characters', {
             characters: characters.map(character => character.get({
@@ -16,7 +50,8 @@ Character.findAll()
         })
     
     .catch(err => console.log(err))
-);
+   }
+ });
 
 router.get('/:id', (req, res) => {
 Character.findByPk(req.params.id)
@@ -31,9 +66,7 @@ Character.findByPk(req.params.id)
 
 // Display Character Creation Form
 
-router.get('/character/create', (req,res) =>  
-res.render('create')
-);
+
 
 
 
@@ -71,18 +104,5 @@ router.post('/create', (req, res) => {
 // Search for characters
 
 
-router.get('/search', ensureAuthenticated, (req, res) => {
-    let { term } = req.query;
-    
-//Make Lowercase
-    term = term.toLowerCase();
-
-    Character.findAll({ where: {
-        character_class: { [Op.like]: '%' + term + '%' }
-    } })
-  
-    .then(characters => res.render('characters', { characters }))
-    .catch(err => console.log(err))
-});
 
 module.exports = router;
