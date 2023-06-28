@@ -1,6 +1,5 @@
 const express = require('express');
 const router = express.Router();
-const db = require('../config/connection');
 const Character = require('../models/Character');
 const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
@@ -30,9 +29,11 @@ Character.findByPk(req.params.id)
     .catch(err => console.log(err))
 });
 
-//Display Character Creation Form
+// Display Character Creation Form
 
-router.get('/create', ensureAuthenticated, (req,res) => res.render('create'));
+router.get('/character/create', (req,res) =>  
+res.render('create')
+);
 
 
 

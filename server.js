@@ -56,7 +56,7 @@ app.use(passport.session());
   app.use((req, res, next) => {
     res.locals.success_msg = req.flash('success_msg')
     res.locals.error_msg = req.flash('error_msg')
-    res.locals.error = req.flash('error')
+    res.locals.success = req.flash('success')
     next();
   })
 
@@ -76,8 +76,7 @@ app.get('login', (req, res) => {
 });
 
 
-app.use('/', require('./controllers/index'))
+app.use('/', require('./controllers/index'));
 app.use('/character', require('./controllers/character'));
 app.use('/users', require('./controllers/userRoutes'));
-
 
