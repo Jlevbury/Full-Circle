@@ -74,10 +74,13 @@ app.get('/', (req, res) => {
 app.get('login', (req, res) => {
     res.render('login', { bgImage: '/public/assets/img/other__11_.png' });
 });
-
+app.get('monsters', (req, res) => {
+  res.render('monsters', { title: 'monsters', bgImage: '/public/assets/img/other__16_.png' })
+});
 
 app.use('/', require('./controllers/index'))
 app.use('/character', require('./controllers/character'));
 app.use('/users', require('./controllers/userRoutes'));
+app.use('/', require('./controllers/monsters.js'));
 
 
