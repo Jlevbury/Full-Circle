@@ -33,3 +33,5 @@ Stats.init(
 );
 
 module.exports = Stats;
+
+//const ideals = secondaryStats.filter(x => x.category === 'ideals')

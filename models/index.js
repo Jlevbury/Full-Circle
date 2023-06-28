@@ -1,6 +1,6 @@
 const User = require('./User');
 const Character = require('./Character');
-const Stats = require('./Stats')
+const Ideals = require('./Ideals')
 
 User.hasMany(Character, {
   foreignKey: 'user_id',
@@ -11,10 +11,14 @@ Character.belongsTo(User, {
   foreignKey: 'user_id'
 });
 
-Character.hasOne(Stats, {
+Character.hasMany(Ideals, {
   foreignKey: 'character_id'
 })
-Stats.belongsTo(Character, {
+
+// has many attacks, traits, equipment,
+
+
+Ideals.belongsTo(Character, {
   foreignKey: 'character_id'
 })
 module.exports = { User, Character };

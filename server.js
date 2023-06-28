@@ -81,13 +81,7 @@ app.get('monsters', (req, res) => {
   res.render('monsters', { title: 'monsters', bgImage: '/public/assets/img/other__16_.png' })
 });
 
-<<<<<<< HEAD
-app.use('/', require('./controllers/index'))
-app.use('/character', require('./controllers/character'));
-app.use('/users', require('./controllers/userRoutes'));
-app.use('/', require('./controllers/monsters.js'));
 
-=======
+
 app.use(routes);
->>>>>>> 9401e3e7bc60ad20f4840ad921fd2f8bed6507e1
 
