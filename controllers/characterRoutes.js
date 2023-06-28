@@ -70,11 +70,11 @@ Character.findByPk(req.params.id)
 
 
 
-router.post('/create', (req, res) => {
-    const { name, character_class } = req.body;
+router.post('/create', async (req, res) => {
+    const { name, character_class, strength, dexterity, constitution, wisdom, intelligence, charisma } = req.body;
     let errors = [];
     //Validate fields
-    
+    console.log(req.body)
     if(!name) {
         errors.push({ text: 'Please add a character name'})
     }
@@ -84,7 +84,6 @@ router.post('/create', (req, res) => {
 
     //Check for errors
     if(errors.length > 0) {
-        console.log('error');
         res.render('create', {
             errors,
             name,
@@ -92,14 +91,20 @@ router.post('/create', (req, res) => {
         })
     } else {
         
-        Character.create({
+        await Character.create({
             name,
-            character_class
+            character_class,
+            strength,
+            dexterity,
+            constitution,
+            wisdom,
+            intelligence,
+            charisma
         })
-        .then(characters => res.redirect('/character'))
-        .catch(err => console.log(err))
-    }
-})
+        res.redirect('/characters')
+    
+}
+});
 
 // Search for characters
 
