@@ -72,7 +72,9 @@ router.post('/register', (req, res) => {
 
 // Login Handle
 
-router.get('/login', (req, res) => res.render('login'));
+router.get('/login', (req, res) => res.render('login',
+{ bgImage: '/public/assets/img/other__11_.png' }));
+
 
 router.post('/login', (req, res, next) => {
     passport.authenticate('local', {

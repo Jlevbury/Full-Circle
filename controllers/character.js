@@ -22,6 +22,7 @@ Character.findAll()
 router.get('/:id', (req, res) => {
 Character.findByPk(req.params.id)
 .then(characters => {
+    console.log(characters)
     res.render('singleCharacter', {
         characters
         })
