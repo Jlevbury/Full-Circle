@@ -6,7 +6,7 @@ const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
 const { ensureAuthenticated } = require('../config/auth');
 
-router.get('/', ensureAuthenticated, (req, res) => 
+router.get('/', (req, res) => 
 Character.findAll()
     .then(characters => {
             res.render('characters', {
@@ -19,9 +19,10 @@ Character.findAll()
     .catch(err => console.log(err))
 );
 
-router.get('/:id', ensureAuthenticated, (req, res) => {
+router.get('/:id', (req, res) => {
 Character.findByPk(req.params.id)
 .then(characters => {
+    console.log(characters)
     res.render('singleCharacter', {
         characters
         })
