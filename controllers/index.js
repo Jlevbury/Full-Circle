@@ -13,5 +13,5 @@ router.use('/characters', characterRoutes);
 router.use('/users', userRoutes);
 router.use('/monsters', monsterRoutes);
 router.use('/rulebook', rulebookRoutes);
-router.use('/', homeRoutes);
+router.use('/homeroutes', homeRoutes);
 module.exports = router;
