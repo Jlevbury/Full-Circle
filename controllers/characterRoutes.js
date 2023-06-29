@@ -40,18 +40,15 @@ router.get('/', async (req, res) => {
             character_class: { [Op.like]: '%' + term + '%' }
         } })
     } else {
-await Character.findAll() 
-    .then(characters => {
+const characters = await Character.findAll() 
+            console.log(characters)
             res.render('characters', {
             characters: characters.map(character => character.get({
                 plain: true
             }))
             })
-        })
-    
-    .catch(err => console.log(err))
-   }
- });
+        }
+   });
 
 router.get('/:id', (req, res) => {
 Character.findByPk(req.params.id)
