@@ -9,78 +9,53 @@ router.get("/create", (req, res) => {
 	res.render("create");
 });
 
-router.get("/search", (req, res) => {
-	res.render("search");
-
-	// localhost:3001/characters/?search=archer = Search term
-});
-
-router.get("/search", (req, res) => {
-	console.log(req.params);
-	console.log(req.query);
-	//Make Lowercase
+router.get("/search", async (req, res) => {
+	let term = req.query.search;
 	term = term.toLowerCase();
 
-	Character.findAll({
-		where: {
-			character_class: { [Op.like]: "%" + term + "%" },
-		},
-	})
-
-		.then((characters) => res.render("characters", { characters }))
-		.catch((err) => console.log(err));
-});
-
-router.get("/", async (req, res) => {
-	let { search } = req.query;
-	if (search) {
-		Character.findAll({
+	try {
+		const characters = await Character.findAll({
 			where: {
 				character_class: { [Op.like]: "%" + term + "%" },
 			},
 		});
-	} else {
-		await Character.findAll()
-			.then((characters) => {
-				res.render("characters", {
-					title: "characterRoutes",
-					bgImage: "/public/assets/img/other__11_.png",
-
-					characters: characters.map((character) =>
-						character.get({
-							plain: true,
-						})
-					),
-				});
-			})
-
-router.get('/', async (req, res) => {
-    let { search } = req.query
-    if(search) {
-        Character.findAll({ where: {
-            character_class: { [Op.like]: '%' + term + '%' }
-        } })
-    } else {
-const characters = await Character.findAll() 
-            console.log(characters)
-            res.render('characters', {
-            characters: characters.map(character => character.get({
-                plain: true
-            }))
-            })
-        }
-   });
-
-router.get("/:id", (req, res) => {
-	Character.findByPk(req.params.id)
-		.then((characters) => {
-			console.log(characters);
-			res.render("singleCharacter", {
-				characters,
-			});
-		})
-		.catch((err) => console.log(err));
+		res.render("characters", { characters })
+	} catch (err) {
+		console.log(err);
+	}
 });
+
+router.get("/", async (req, res) => {
+	let term = req.query.search;
+	if (term) {
+		term = term.toLowerCase();
+		const characters = await Character.findAll({
+			where: {
+				character_class: { [Op.like]: "%" + term + "%" },
+			},
+		});
+		res.render("characters", { characters });
+	} else {
+		const characters = await Character.findAll();
+		res.render("characters", {
+			title: "characterRoutes",
+			bgImage: "/public/assets/img/other__11_.png",
+			characters: characters.map(character => character.get({
+				plain: true
+			})),
+		});
+	}
+});
+
+router.get("/:id", async (req, res) => {
+	try {
+		const character = await Character.findByPk(req.params.id);
+		res.render("singleCharacter", { character });
+	} catch (err) {
+		console.log(err);
+	}
+});
+
 
 // Display Character Creation Form
 
@@ -126,7 +101,4 @@ router.post("/create", async (req, res) => {
 		res.redirect("/characters");
 	}
 });
-
-// Search for characters
-
 module.exports = router;

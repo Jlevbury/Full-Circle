@@ -20,7 +20,7 @@ router.get('/dashboard', ensureAuthenticated, (req, res) => {
 
 router.use('/characters', characterRoutes);
 router.use('/users', userRoutes);
-router.use('/monsters', monsterRoutes)
-router.use('/rulebook', rulebookRoutes)
+router.use('/monsters', monsterRoutes);
+router.use('/rulebook', rulebookRoutes);
 
 module.exports = router;
