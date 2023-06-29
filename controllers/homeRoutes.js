@@ -1,12 +1,16 @@
-const router = require('express').Router();
-// const BlogPost = require('../models/BlogPost');
-// const User = require('../models/User');
-// const withAuth = require('../utils/auth');
+const express = require('express');
+const router = express.Router();
+const { ensureAuthenticated } = require('../config/auth');
 
 router.get('/', (req, res) => {
+    res.render('homepage', { title: 'homepage', bgImage: '/public/assets/img/mountains__2_.png' })
+});
 
-    console.log('hi')
-    res.send('index');
-    
-    })
-    
+
+// Dashboard
+
+router.get('/dashboard', (req, res) => {
+    res.render('dashboard')
+});
+
+module.exports = router;

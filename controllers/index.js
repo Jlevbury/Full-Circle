@@ -5,22 +5,13 @@ const characterRoutes = require('./characterRoutes');
 const userRoutes = require('./userRoutes')
 const monsterRoutes = require('./monsterRoutes')
 const rulebookRoutes = require('./rulebookRoutes')
- 
+ const homeRoutes = require('./homeRoutes')
 // Welcome Page
-router.get('/', (req, res) => {
-    res.render('homepage', { title: 'homepage', bgImage: '/public/assets/img/mountains__2_.png' })
-});
 
-
-// Dashboard
-
-router.get('/dashboard', ensureAuthenticated, (req, res) => {
-    res.render('dashboard')
-});
 
 router.use('/characters', characterRoutes);
 router.use('/users', userRoutes);
-router.use('/monsters', monsterRoutes)
-router.use('/rulebook', rulebookRoutes)
-
+router.use('/monsters', monsterRoutes);
+router.use('/rulebook', rulebookRoutes);
+router.use('/', homeRoutes);
 module.exports = router;

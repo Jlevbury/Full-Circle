@@ -17,24 +17,10 @@ router.get('/search', (req,res) =>  {
    // localhost:3001/characters/?search=archer = Search term
 });
 
-router.get('/search', (req, res) => {
-    console.log(req.params);
-    console.log(req.query)
-//Make Lowercase
-    term = term.toLowerCase();
-
-    Character.findAll({ where: {
-        character_class: { [Op.like]: '%' + term + '%' }
-    } })
-  
-    .then(characters => res.render('characters', { characters }))
-    .catch(err => console.log(err))
-});
-
-
 
 router.get('/', async (req, res) => {
-    let { search } = req.query
+    let { search } = req.query;
+    console.log(req.query)
     if(search) {
         Character.findAll({ where: {
             character_class: { [Op.like]: '%' + term + '%' }
@@ -50,6 +36,24 @@ const characters = await Character.findAll()
         }
    });
 
+   router.get('/search', (req, res) => {
+    let { term } = req.query;
+    console.log(req.query)
+    console.log('working')
+ //Make Lowercase
+     term = term.toLowerCase();
+ 
+     Character.findAll({ where: {
+         character_class: { [Op.like]: '%' + term + '%' }
+     } })
+   
+     .then(characters => {res.render('characters', { characters })
+     console.log(characters)
+ }
+     )
+     .catch(err => console.log(err))
+ });
+
 router.get('/:id', (req, res) => {
 Character.findByPk(req.params.id)
 .then(characters => {
@@ -62,10 +66,6 @@ Character.findByPk(req.params.id)
 });
 
 // Display Character Creation Form
-
-
-
-
 
 router.post('/create', async (req, res) => {
     const { name, character_class, strength, dexterity, constitution, wisdom, intelligence, charisma } = req.body;
