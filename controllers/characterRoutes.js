@@ -54,9 +54,22 @@ router.get("/", async (req, res) => {
 				});
 			})
 
-			.catch((err) => console.log(err));
-	}
-});
+router.get('/', async (req, res) => {
+    let { search } = req.query
+    if(search) {
+        Character.findAll({ where: {
+            character_class: { [Op.like]: '%' + term + '%' }
+        } })
+    } else {
+const characters = await Character.findAll() 
+            console.log(characters)
+            res.render('characters', {
+            characters: characters.map(character => character.get({
+                plain: true
+            }))
+            })
+        }
+   });
 
 router.get("/:id", (req, res) => {
 	Character.findByPk(req.params.id)

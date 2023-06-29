@@ -3,7 +3,8 @@ const router = express.Router();
 const { ensureAuthenticated } = require('../config/auth');
 const characterRoutes = require('./characterRoutes');
 const userRoutes = require('./userRoutes')
-const monsterRoutes = require('./monsters')
+const monsterRoutes = require('./monsterRoutes')
+const rulebookRoutes = require('./rulebookRoutes')
  
 // Welcome Page
 router.get('/', (req, res) => {
@@ -20,5 +21,6 @@ router.get('/dashboard', ensureAuthenticated, (req, res) => {
 router.use('/characters', characterRoutes);
 router.use('/users', userRoutes);
 router.use('/monsters', monsterRoutes)
+router.use('/rulebook', rulebookRoutes)
 
 module.exports = router;
