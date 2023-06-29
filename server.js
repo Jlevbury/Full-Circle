@@ -70,16 +70,16 @@ app.use("/public", express.static(path.join(__dirname, 'public')));
 
 // Index route - Can replace layout with a different one
 //app.get('/', (req, res) => res.render('homepage'));
-app.get('/', (req, res) => {
-    res.render('homepage', { bgImage: '/public/assets/img/mountains__2_.png' });
-});
-//LOGIN PAGE BACKGROUND IMAGE ROUTE IS BELOW THIS COMMENT
-app.get('login', (req, res) => {
-    res.render('login', { bgImage: '/public/assets/img/other__11_.png' });
-});
-app.get('monsters', (req, res) => {
-  res.render('monsters', { title: 'monsters', bgImage: '/public/assets/img/other__16_.png' })
-});
+// app.get('/', (req, res) => {
+//     res.render('homepage', { bgImage: '/public/assets/img/mountains__2_.png' });
+// });
+// //LOGIN PAGE BACKGROUND IMAGE ROUTE IS BELOW THIS COMMENT
+// app.get('login', (req, res) => {
+//     res.render('login', { bgImage: '/public/assets/img/other__11_.png' });
+// });
+// app.get('monsters', (req, res) => {
+//   res.render('monsters', { title: 'monsters', bgImage: '/public/assets/img/other__16_.png' })
+// });
 
 
 

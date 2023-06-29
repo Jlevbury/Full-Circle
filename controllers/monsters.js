@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const { ensureAuthenticated } = require('../config/auth');
 
-router.get('/monsters', (req, res) => {
+router.get('/', (req, res) => {
     res.render('monsters', { title: 'monsters', bgImage: '/public/assets/img/other__16_.png' })
 });
 
