@@ -74,7 +74,7 @@ router.get('/login', (req, res) => {
     const {email, password} = req.body;
     let errors = [];
     res.render('login',
-    { bgImage: '/public/assets/img/other__11_.png',
+    { bgImage: '/assets/img/other__11_.png',
     email,
     password });
 });

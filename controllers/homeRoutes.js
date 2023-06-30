@@ -7,7 +7,7 @@ const { loggedIn } = require('../utils/helpers');
 
 router.get('/', (req, res) => {
     res.render('index',
-    { title: 'homepage', bgImage: '/public/assets/img/mountains__2_.png' })
+    { title: 'homepage', bgImage: '/assets/img/mountains__2_.png' })
 });
 
 
@@ -23,7 +23,7 @@ router.get('/login', (req, res) => {
     const {email, password} = req.body;
     let errors = [];
     res.render('homepage',
-    { bgImage: '/public/assets/img/other__11_.png',
+    { bgImage: '/assets/img/other__11_.png',
     email,
     password });
 });

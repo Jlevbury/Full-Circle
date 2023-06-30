@@ -39,7 +39,7 @@ router.get("/", async (req, res) => {
 		const characters = await Character.findAll();
 		res.render("characters", {
 			title: "characterRoutes",
-			bgImage: "/public/assets/img/other__11_.png",
+			bgImage: "/assets/img/other__11_.png",
 			characters: characters.map(character => character.get({
 				plain: true
 			})),
