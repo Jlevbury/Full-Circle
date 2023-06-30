@@ -17,7 +17,9 @@ async function getData() {
     const response = await fetch(`${url}?${queryString}`, options);
     const result = await response.json();
     console.log(result);
-    resultLocation.textContent = result.body[0]
+    let resultLocation = document.querySelector("#monsterName");
+    resultLocation.textContent = result.parameters;
+    console.log([0].name)
   } catch (error) {
     console.log(error);
   }
