@@ -66,6 +66,8 @@ app.use(passport.session());
   
 
 // Set static folder
+app.use(express.static('public'));
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Use Routes
