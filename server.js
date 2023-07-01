@@ -69,7 +69,7 @@ app.use(passport.session());
 app.use(express.static('public'));
 
 app.use(express.static(path.join(__dirname, 'public')));
-
+app.use(express.static(path.join(__dirname, 'js')));
 // Use Routes
 app.use(routes);
 
