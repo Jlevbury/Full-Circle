@@ -1,0 +1,43 @@
+<h2>Sign Up</h2>
+
+{{#each errors}}
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <strong>Holy guacamole!</strong> 
+  <p>{{msg}}</p>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+
+    
+{{/each}}
+
+ <div class="col">
+    <form class="text-primary-emphasis bg-body-tertiary bg-opacity-75 p-4 p-md-5 border rounded-3" method="post" enctype="application/x-www-form-urlencoded" style="margin-left: 38px;margin-right: 38px;padding-left: 12px;" action="/users/register" method="POST">
+        <div class="form-floating mb-3">
+            <input class="form-control" type="name" id="name" placeholder="John Doe" name="name" value={{name}}>
+                <label class="form-label" data-bss-hover-animate="pulse" for="floatingInput">
+                    Name
+                </label>
+        </div>
+        <div class="form-floating mb-3">
+            <input class="form-control" type="email" id="email" placeholder="name@example.com" name="email" value={{email}}>
+                <label class="form-label" data-bss-hover-animate="pulse" for="floatingInput">
+                    Email address
+                </label>
+        </div>
+        <div class="form-floating mb-3">
+            <input class="form-control" type="password" id="password-1" placeholder="Password" name="password" value={{password}}>
+                <label class="form-label" for="floatingPassword">
+                    Password
+                </label>
+            </div>
+        <div class="checkbox mb-3">
+        </div>
+        <button class="btn btn-primary btn-lg text-bg-dark w-100" type="submit">
+            Sign up
+        </button>
+        <hr class="my-4">
+        <small class="text-body-secondary">
+            By clicking Sign up, you agree to the terms of use.
+        </small>
+    </form>
+</div>

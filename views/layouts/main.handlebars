@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html data-bs-theme="dark" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Main</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    
+   <!-- <link rel="stylesheet" href="/public/assets/css/Navbar-Right-Links-Dark-icons.css?h=befd8a398792e305b7ffd4a176b5b585">-->
+   
+</head>
+
+<body >
+   
+    
+    <!-- Start: Navbar Right Links (Dark) -->
+    <nav class="navbar navbar-dark navbar-expand-md bg-dark border rounded py-3">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="/">
+                <span class="bs-icon-sm bs-icon-rounded bs-icon-primary d-flex justify-content-center align-items-center me-2 bs-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-bezier" style="font-size: 19px;">
+                        <path fill-rule="evenodd" d="M0 10.5A1.5 1.5 0 0 1 1.5 9h1A1.5 1.5 0 0 1 4 10.5v1A1.5 1.5 0 0 1 2.5 13h-1A1.5 1.5 0 0 1 0 11.5v-1zm1.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1zm10.5.5A1.5 1.5 0 0 1 13.5 9h1a1.5 1.5 0 0 1 1.5 1.5v1a1.5 1.5 0 0 1-1.5 1.5h-1a1.5 1.5 0 0 1-1.5-1.5v-1zm1.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1zM6 4.5A1.5 1.5 0 0 1 7.5 3h1A1.5 1.5 0 0 1 10 4.5v1A1.5 1.5 0 0 1 8.5 7h-1A1.5 1.5 0 0 1 6 5.5v-1zM7.5 4a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1z"></path>
+                        <path d="M6 4.5H1.866a1 1 0 1 0 0 1h2.668A6.517 6.517 0 0 0 1.814 9H2.5c.123 0 .244.015.358.043a5.517 5.517 0 0 1 3.185-3.185A1.503 1.503 0 0 1 6 5.5v-1zm3.957 1.358A1.5 1.5 0 0 0 10 5.5v-1h4.134a1 1 0 1 1 0 1h-2.668a6.517 6.517 0 0 1 2.72 3.5H13.5c-.123 0-.243.015-.358.043a5.517 5.517 0 0 0-3.185-3.185z"></path>
+                    </svg>
+                </span>
+                <span>The Rule of Cool</span>
+            </a>
+            <button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-5">
+                <span class="visually-hidden">Toggle navigation</span>
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navcol-5">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/characters">Characters</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/monsters">Monster Manual</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/rulebook">Rulebook</a>
+                    </li>
+                   <!-- <li class="nav-item dropdown" data-bs-toggle="tooltip" data-bss-tooltip="">
+                        <a class="dropdown-toggle nav-link D4 visible" aria-expanded="false" data-bs-toggle="dropdown" href="/diceroller">Dice Roller</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">First Item</a>
+                            <a class="dropdown-item" href="#">Second Item</a>
+                            <a class="dropdown-item" href="#">Third Item</a>
+                        </div>
+                    </li>
+                </ul>
+                <a class="btn btn-primary ms-md-2" role="button" href="#">ROLL!</a>-->
+            </div>
+        </div>
+    </nav>
+    <!-- End: Navbar Right Links (Dark) -->
+    
+    <body style="background-image: url({{bgImage}}); background-size: cover;">
+    <!-- other content -->
+   
+</body>
+
+    {{{ body }}}
+
+<button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Roll the Dice!</button>
+
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+  <div class="offcanvas-header ">
+    <h5 id="offcanvasRightLabel ">Dice Roller</h5>
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body ">
+    <div class="col-lg-6 col-md-6 mx-auto">
+
+          <div class="col " >
+            <div class="card-body ">
+              <h5 class="card-title">Roll a Die</h5>
+              <form id="diceForm">
+                <div class="mb-3">
+                  <label for="selectDie" class="form-label">Size</label>
+                  <select class="form-select" id="selectDie">
+                    <option selected>Select a die...</option>
+                    <option value="4">D4</option>
+                    <option value="6">D6</option>
+                    <option value="8">D8</option>
+                    <option value="10">D10</option>
+                    <option value="12">D12</option>
+                    <option value="20">D20</option>
+                    <option value="100">D100</option>
+                  </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Roll!</button>
+              </form>
+              <p class="card-text mt-3">Roll Result: <span id="displayResult"></span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+<!--<footer class="text-dark-emphasis text-bg-dark bg-body bg-opacity-75 border rounded shadow d-flex align-items-center fixed-bottom" style="height: 120px;">
+  <div class="container p-4" >
+    <div class="row justify-content-between">
+      <!-- Dice Roller Section 
+      <div class="col-lg-6 col-md-6">
+
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Roll a Die</h5>
+              <form id="diceForm">
+                <div class="mb-3">
+                  <label for="selectDie" class="form-label">Size</label>
+                  <select class="form-select" id="selectDie">
+                    <option selected>Select a die...</option>
+                    <option value="4">D4</option>
+                    <option value="6">D6</option>
+                    <option value="8">D8</option>
+                    <option value="10">D10</option>
+                    <option value="12">D12</option>
+                    <option value="20">D20</option>
+                    <option value="100">D100</option>
+                  </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Roll!</button>
+              </form>
+              <p class="card-text mt-3">Roll Result: <span id="displayResult"></span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Links Section 
+      <div class="col-lg-6 col-md-6">
+        <h5 class="text-uppercase">Links</h5>
+        <ul class="list-unstyled mb-0">
+          <li><a href="#!" class="text-light">Link 1</a></li>
+          <li><a href="#!" class="text-light">Link 2</a></li>
+          <li><a href="#!" class="text-light">Link 3</a></li>
+          <li><a href="#!" class="text-light">Link 4</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>-->
+
+
+
+
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script> 
+</body>
+
+</html>

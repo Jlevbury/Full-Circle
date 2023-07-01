@@ -1,0 +1,15 @@
+<H3>CHARACTERS!</H3>
+
+{{#each characters}}
+
+<a class="btn btn-primary ms-md-2" role="button" href="/characters/{{id}}">
+<h3>{{name}}</h3>
+</a>
+<p>{{character_class}}</p>
+
+{{else}}
+
+<p>You have not created any characters</p>
+
+{{/each}}
+
