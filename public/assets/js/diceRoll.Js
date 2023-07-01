@@ -1,4 +1,3 @@
-// Grab the HTML elements
 const diceSelect = document.getElementById('selectDie');
 const rollButton = document.querySelector('#diceForm button[type="submit"]');
 const resultSpan = document.getElementById('displayResult');
