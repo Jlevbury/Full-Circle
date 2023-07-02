@@ -1,17 +1,21 @@
+
 <section>
+    {{#each characters}}
     <div class="container border rounded border-0 shadow h-100 container-style">
         <div class="row h-100">
             <div class="col-6 justify-content-center col-style">
                 <div class="lead text-dark-emphasis text-opacity-75 lead-style">
-                    Test Space 
-                    <a class="btn btn-primary " role="button" href="/characters/{{id}}"></a>
+                    <a class="btn btn-primary " role="button" href="/characters/{{id}}">
+                        {{name}}        
+                    </a>
                 </div>
             </div>
             <div class="col-6 justify-content-center col-style">
                 <div class="lead text-dark-emphasis text-opacity-75 my-3-style">
-                    Character Class{{character_class}} 
+                    <li>{{character_class}}</li>
                 </div>
             </div>
         </div>
     </div>
+    {{/each}}
 </section>

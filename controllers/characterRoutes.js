@@ -43,7 +43,9 @@ router.get("/", async (req, res) => {
 			characters: characters.map(character => character.get({
 				plain: true
 			})),
-		});
+		}
+		);
+		console.log(characters)
 	}
 });
 
