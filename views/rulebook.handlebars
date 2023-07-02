@@ -1,16 +1,24 @@
-<H3>RULE BOOK!</H3>
-<section>
-    <div style="height: 600px;background-image: url(castles__33_.png);background-position: center;background-size: cover;">
-        <div class="container border rounded border-0 shadow h-100">
-            <div class="row h-100">
-                <div class="col-md-6 col-lg-6 col-xl-4 offset-lg-0 offset-xl-0 text-center text-md-start d-flex d-sm-flex d-md-flex justify-content-center align-items-center justify-content-md-start align-items-md-center justify-content-xl-center" style="margin-bottom: 5px;padding-bottom: 43px;backdrop-filter: opacity(1) brightness(72%);background: var(--bs-focus-ring-color);border-radius: 6px;filter: contrast(132%) hue-rotate(0deg) invert(77%) saturate(51%);">
-                    <div style="max-width: 350px;" data-bs-theme="dark">
+
+<section >
+    
+        <div class="container border rounded border-0 shadow vh-auto">
+            <div class="row flex-fill">
+                <div class="col text-center text-md-start d-flex d-sm-flex d-md-flex justify-content-center align-items-center " style="margin-bottom: 5px;padding-bottom: 43px;backdrop-filter: opacity(1) brightness(72%);background: var(--bs-focus-ring-color);border-radius: 6px;filter: contrast(132%)  saturate(51%);">
+                    <div style="w-auto p-3" data-bs-theme="dark">
                         <h1 class="text-uppercase fw-bold">Rule lookup</h1>
                         <p class="lead text-dark-emphasis text-opacity-75 my-3" style="padding-top: 0px;padding-left: 24px;padding-right: 24px;margin-top: 5px;margin-bottom: 5px;">From pickpocketing to hurling your party member like a cannon ball, find the rules to fight the DM, they know you&#39;re right, now&#39;s your chance to prove it!</p>
+                   <div id="rule-lookup">
+  <input type="text" id="rule-search" placeholder="Enter a rule name..." />
+  <button id="lookup-button">Look up rule</button>
+  <div id="rule-info"></div>
+</div>
+
                     </div>
                 </div>
-                <div class="col-lg-6 offset-xl-1"></div>
+              
             </div>
         </div>
     </div>
+    <script src="/assets/js/rules.js"> </script>
+
 </section>

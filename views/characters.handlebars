@@ -1,15 +1,17 @@
-<H3>CHARACTERS!</H3>
-
-{{#each characters}}
-
-<a class="btn btn-primary ms-md-2" role="button" href="/characters/{{id}}">
-<h3>{{name}}</h3>
-</a>
-<p>{{character_class}}</p>
-
-{{else}}
-
-<p>You have not created any characters</p>
-
-{{/each}}
-
+<section>
+    <div class="container border rounded border-0 shadow h-100 container-style">
+        <div class="row h-100">
+            <div class="col-6 justify-content-center col-style">
+                <div class="lead text-dark-emphasis text-opacity-75 lead-style">
+                    Test Space 
+                    <a class="btn btn-primary " role="button" href="/characters/{{id}}"></a>
+                </div>
+            </div>
+            <div class="col-6 justify-content-center col-style">
+                <div class="lead text-dark-emphasis text-opacity-75 my-3-style">
+                    Character Class{{character_class}} 
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
