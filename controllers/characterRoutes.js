@@ -4,6 +4,7 @@ const Character = require("../models/Character");
 const Sequelize = require("sequelize");
 const Op = Sequelize.Op;
 const { ensureAuthenticated } = require("../config/auth");
+const Equipment = require("../models/Equipment");
 
 router.get("/create", (req, res) => {
 	res.render("create");
@@ -51,8 +52,16 @@ router.get("/", async (req, res) => {
 
 router.get("/:id", async (req, res) => {
 	try {
-		const character = await Character.findByPk(req.params.id);
-		res.render("singleCharacter", { character });
+		const character = await Character.findByPk(req.params.id, {
+			include: [
+				{
+					model: Equipment
+				}
+			]
+		});
+		console.log(character);
+		res.render("singleCharacter", { 
+			character });
 	} catch (err) {
 		console.log(err);
 	}
