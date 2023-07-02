@@ -6,8 +6,11 @@ document.getElementById('lookup-button').addEventListener('click', function() {
         .then(response => response.json())
         .then(data => {
             let ruleInfoDiv = document.getElementById('rule-info');
+            let converter = new showdown.Converter(),
+            html = converter.makeHtml(data.desc);
+
             ruleInfoDiv.innerHTML = `<h2>${data.name}</h2>`;
-            ruleInfoDiv.innerHTML += `<p>${data.desc}</p>`;
+            ruleInfoDiv.innerHTML += `<p>${html}</p>`;
         })
         .catch(error => {
             console.error('Error:', error);

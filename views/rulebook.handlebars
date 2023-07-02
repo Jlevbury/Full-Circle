@@ -1,24 +1,51 @@
-
-<section >
-    
-        <div class="container border rounded border-0 shadow vh-auto">
-            <div class="row flex-fill">
-                <div class="col text-center text-md-start d-flex d-sm-flex d-md-flex justify-content-center align-items-center " style="margin-bottom: 5px;padding-bottom: 43px;backdrop-filter: opacity(1) brightness(72%);background: var(--bs-focus-ring-color);border-radius: 6px;filter: contrast(132%)  saturate(51%);">
-                    <div style="w-auto p-3" data-bs-theme="dark">
-                        <h1 class="text-uppercase fw-bold">Rule lookup</h1>
-                        <p class="lead text-dark-emphasis text-opacity-75 my-3" style="padding-top: 0px;padding-left: 24px;padding-right: 24px;margin-top: 5px;margin-bottom: 5px;">From pickpocketing to hurling your party member like a cannon ball, find the rules to fight the DM, they know you&#39;re right, now&#39;s your chance to prove it!</p>
-                   <div id="rule-lookup">
-  <input type="text" id="rule-search" placeholder="Enter a rule name..." />
-  <button id="lookup-button">Look up rule</button>
-  <div id="rule-info"></div>
-</div>
-
+<section>
+    <div class="container border rounded border-0 shadow vh-auto">
+        <div class="row flex-fill">
+            <div class="col text-center text-md-start d-flex d-sm-flex d-md-flex justify-content-center align-items-center" style="margin-bottom: 5px;padding-bottom: 43px;backdrop-filter: opacity(1) brightness(72%);background: var(--bs-focus-ring-color);border-radius: 6px;filter: contrast(132%)  saturate(51%);">
+                <div style="w-auto p-3" data-bs-theme="dark">
+                    <h1 class="text-uppercase fw-bold">Rule lookup</h1>
+                    <p class="lead text-dark-emphasis text-opacity-75 my-3" style="padding-top: 0px;padding-left: 24px;padding-right: 24px;margin-top: 5px;margin-bottom: 5px;">From pickpocketing to hurling your party member like a cannon ball, find the rules to fight the DM, they know you&#39;re right, now&#39;s your chance to prove it!</p>
+                    <div id="rule-lookup">
+                        <select id="rule-search">
+                            <option value="ability-checks">Ability Checks</option>
+                            <option value="ability-scores-and-modifiers">Ability Scores and Modifiers</option>
+                            <option value="actions-in-combat">Actions in Combat</option>
+                            <option value="advantage-and-disadvantage">Advantage and Disadvantage</option>
+                            <option value="between-adventures">Between Adventures</option>
+                            <option value="casting-a-spell">Casting a Spell</option>
+                            <option value="cover">Cover</option>
+                            <option value="damage-and-healing">Damage and Healing</option>
+                            <option value="diseases">Diseases</option>
+                            <option value="fantasy-historical-pantheons">Fantasy Historical Pantheons</option>
+                            <option value="madness">Madness</option>
+                            <option value="making-an-attack">Making an Attack</option>
+                            <option value="mounted-combat">Mounted Combat</option>
+                            <option value="movement">Movement</option>
+                            <option value="movement-and-position">Movement and Position</option>
+                            <option value="objects">Objects</option>
+                            <option value="poisons">Poisons</option>
+                            <option value="proficiency-bonus">Proficiency Bonus</option>
+                            <option value="resting">Resting</option>
+                            <option value="saving-throws">Saving Throws</option>
+                            <option value="sentient-magic-items">Sentient Magic Items</option>
+                            <option value="standard-exchange-rates">Standard Exchange Rates</option>
+                            <option value="the-environment">The Environment</option>
+                            <option value="the-order-of-combat">The Order of Combat</option>
+                            <option value="the-planes-of-existence">The Planes of Existence</option>
+                            <option value="time">Time</option>
+                            <option value="traps">Traps</option>
+                            <option value="underwater-combat">Underwater Combat</option>
+                            <option value="using-each-ability">Using Each Ability</option>
+                            <option value="what-is-a-spell">What is a Spell</option>
+                        </select>
+                        <button id="lookup-button" type="button" class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#rule-info">Look up rule</button>
+                        <div id="rule-info" class="collapse">
+                        </div>
                     </div>
                 </div>
-              
             </div>
         </div>
     </div>
     <script src="/assets/js/rules.js"> </script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.1/showdown.min.js"></script>
 </section>
