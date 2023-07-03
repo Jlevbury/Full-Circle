@@ -24,17 +24,21 @@ const newEquipmentHandler = async (event) => {
   };
 
   const delButtonHandler = async (event) => {
+
+    const character_id = document.querySelector('#character-id').value;
+
     if (event.target.hasAttribute('data-id')) {
       const id = event.target.getAttribute('data-id');
+      console.log(id)
 
-      const response = await fetch(`/api/blog/${id}`, {
+      const response = await fetch(`/api/equipment/${id}`, {
         method: 'DELETE',
       });
 
       if (response.ok) {
-        document.location.replace('/profile');
+        document.location.replace(`/characters/${character_id}`);
       } else {
-        alert('Failed to delete blog');
+        alert('Failed to delete item');
       }
     }
   };
@@ -44,5 +48,8 @@ window.onload=function(){
   document
     .querySelector('.new-equipment-form')
     .addEventListener('submit', newEquipmentHandler);
-}
-  
+
+    document
+    .querySelector('.equipment-list')
+    .addEventListener('click', delButtonHandler);
+  }

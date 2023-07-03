@@ -109,10 +109,10 @@
     
     <h3>Current Inventory:</h3>
 
-    <div>
+    <div class="equipment-list">
       {{#each equipment}}
         
-          <P data-id={{ id }}>{{item}}</p> 
+          <P>{{item}}</p> 
          <button type ="submit" class="btn btn-sm btn-danger" data-id="{{id}}">DELETE</button>
     {{ else }}
 
