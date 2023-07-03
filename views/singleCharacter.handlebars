@@ -1,9 +1,8 @@
-{{#with character}}
 
-<h3>This is the home of {{dataValues.name}} the {{dataValues.character_class}}</h3>
+<h3>This is the home of {{name}} the {{character_class}}</h3>
 
 <h4>Strength!</h4>
-{{dataValues.strength}}
+{{strength}}
 <ul class="list-group list-group-horizontal">
   <li class="list-group-item">Athletics</li>
    <li class="list-group-item">Saving Throw</li>
@@ -12,7 +11,7 @@
   <li class="list-group-item">4</li>
 </ul>
 <h4>Dexterity!</h4>
-{{dataValues.dexterity}}
+{{dexterity}}
 <ul class="list-group list-group-horizontal-sm">
   <li class="list-group-item">Stealth</li>
   <li class="list-group-item">Sleight of Hand</li>
@@ -26,7 +25,7 @@
     <li class="list-group-item">4</li>
 </ul>
 <h4>Constitution!</h4>
-{{dataValues.constitution}}
+{{constitution}}
 <ul class="list-group list-group-horizontal-sm">
   <li class="list-group-item">Saving Throw</li>
 </ul>
@@ -34,7 +33,7 @@
     <li class="list-group-item">4</li>
 </ul>
 <h4>Intelligence!</h4>
-{{dataValues.intelligence}}
+{{intelligence}}
 <ul class="list-group list-group-horizontal-sm">
   <li class="list-group-item">Arcana</li>
   <li class="list-group-item">History</li>
@@ -52,7 +51,7 @@
     <li class="list-group-item">4</li>
 </ul>
 <h4>Wisdom!</h4>
-{{dataValues.wisdom}}
+{{wisdom}}
 <ul class="list-group list-group-horizontal-sm">
   <li class="list-group-item">Animal Handling</li>
   <li class="list-group-item">Insight</li>
@@ -71,7 +70,7 @@
     <li class="list-group-item">4</li>
 </ul>
 <h4>Charisma!</h4>
-{{dataValues.charisma}}
+{{charisma}}
 <ul class="list-group list-group-horizontal-sm">
   <li class="list-group-item">Deception</li>
   <li class="list-group-item">Intimidation</li>
@@ -87,7 +86,7 @@
 </ul>
 
 
-<h3>What's in your backpack, {{dataValues.name}}</h3>
+<h3>What's in your backpack, {{name}}</h3>
 
 
 <div>
@@ -96,7 +95,7 @@
       <h3>Add an item:</h3>
 
       <form class="form new-equipment-form">
-        <input type="hidden" value="{{dataValues.id}}" name="character-id" id="character-id">
+        <input type="hidden" value="{{id}}" name="character-id" id="character-id">
         <div class="form-group">
           <label for="equipment-desc">equipment:</label>
           <textarea class="form-input" id="equipment-desc" name="equipment-desc"></textarea>
@@ -106,19 +105,20 @@
         </div>
       </form>
 
-{{/with}}
+
     
     <h3>Current Inventory:</h3>
 
     <div>
-      {{#with character}}
-        <p>{{name}}</p>
-          <P>{{item}}</p> 
-
+      {{#each equipment}}
+        
+          <P data-id={{ id }}>{{item}}</p> 
+         <button type ="submit" class="btn btn-sm btn-danger" data-id="{{id}}">DELETE</button>
     {{ else }}
 
         <p>No current inventory</p>
-      {{/with}}
+        
+      {{/each}}
 
     </div>
   </div>

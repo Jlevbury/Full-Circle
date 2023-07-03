@@ -52,16 +52,17 @@ router.get("/", async (req, res) => {
 
 router.get("/:id", async (req, res) => {
 	try {
-		const character = await Character.findByPk(req.params.id, {
+		const characterData = await Character.findByPk(req.params.id, {
 			include: [
 				{
 					model: Equipment
 				}
 			]
 		});
+		const character = characterData.get({ plain: true })
 		console.log(character);
 		res.render("singleCharacter", { 
-			character });
+			...character });
 	} catch (err) {
 		console.log(err);
 	}
