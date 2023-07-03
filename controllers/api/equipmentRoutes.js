@@ -20,7 +20,6 @@ router.post('/', async (req, res) => {
           id: req.params.id,
         },
       });
-      console.log(equipmentData)
       if (!equipmentData) {
         res.status(404).json({ message: 'No item found with this id!' });
         return;
