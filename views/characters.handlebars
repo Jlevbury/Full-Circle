@@ -1,32 +1,34 @@
-<section>
+
+<section class="character-list">
+    Your characters:
+    {{#each characters}}
     <div class="container border rounded border-0 shadow h-100 container-style">
         <div class="row h-100">
             <div class="col-6 justify-content-center col-style">
                 <div class="lead text-dark-emphasis text-opacity-75 lead-style">
-                    Test Space 
-                    <a class="btn btn-primary " role="button" href="/characters/{{id}}"></a>
+                    <a class="btn btn-primary " role="button" href="/characters/{{id}}">
+                        {{name}}        
+                    </a>
                 </div>
+                 <div class="col-md-4">
+        <button type ="submit" class="btn btn-sm btn-danger" data-id="{{id}}">DELETE</button>
+      </div>
             </div>
             <div class="col-6 justify-content-center col-style">
                 <div class="lead text-dark-emphasis text-opacity-75 my-3-style">
-                    Character Class{{character_class}} 
+                    <li>{{character_class}}</li>
                 </div>
             </div>
         </div>
     </div>
+    {{else}}
+    <h3>You have not created any characters.</h3>
+    {{/each}}
+    <div>
+    <a class="btn btn-primary" href="/characters/create" role="button">Create a new character</a>
+
+
+    </div>
 </section>
 
-<!--<H3>CHARACTERS!</H3>
-
-{{#each characters}}
-
-<a class="btn btn-primary ms-md-2" role="button" href="/characters/{{id}}">
-<h3>{{name}}</h3>
-</a>
-<p>{{character_class}}</p>
-
-{{else}}
-
-<p>You have not created any characters</p>
-
-{{/each}}-->
+<script src="/assets/js/character.js"></script>
