@@ -2,7 +2,7 @@
 <section>
     Your characters:
     {{#each characters}}
-    <div class="container border rounded border-0 shadow h-100 container-style">
+    <div class="container border rounded border-0 shadow h-100 container-style character-list">
         <div class="row h-100">
             <div class="col-6 justify-content-center col-style">
                 <div class="lead text-dark-emphasis text-opacity-75 lead-style">
@@ -10,6 +10,9 @@
                         {{name}}        
                     </a>
                 </div>
+                 <div class="col-md-4">
+        <button type ="submit" class="btn btn-sm btn-danger" data-id="{{id}}">DELETE</button>
+      </div>
             </div>
             <div class="col-6 justify-content-center col-style">
                 <div class="lead text-dark-emphasis text-opacity-75 my-3-style">
@@ -28,3 +31,4 @@
     </div>
 </section>
 
+<script src="/assets/js/character.js"></script>
