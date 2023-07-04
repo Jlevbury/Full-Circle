@@ -1,43 +1,44 @@
 
-<h1>Let's build a character</h1>
-
-{{#each errors}}
-    <p>{{text}}</p>
-{{/each}}
-
-
-<form action="/characters/create" method="POST">
-  <label for="Name" class="form-label">Character Name</label>
-    <input type="Character Name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="name" value={{name}}>
-  </div>
-  <div class="mb-3">
-    <label for="Character_Class" class="form-label">Character Class</label>
-    <input type="Character Description" class="form-control" id="exampleInputPassword1" name="character_class" value={{character_class}}>
-  </div>
-    <div class="mb-3">
-    <label for="race" class="form-label">Character Race</label>
-    <input type="race" class="form-control" id="exampleInputPassword1" name="race" value={{race}}>
-  </div>
-    <label for="Name" class="form-label">Strength Score</label>
-    <input type="strength" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="strength" value={{strength}}>
-  </div>
-  <div class="mb-3">
-    <label for="Description" class="form-label">Dexterity Score</label>
-    <input type="dexterity" class="form-control" id="exampleInputPassword1" name="dexterity" value={{dexterity}}>
-  </div>
-    <label for="Name" class="form-label">Constitution Score</label>
-    <input type="constitution" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="constitution" value={{constitution}}>
-  </div>
-  <div class="mb-3">
-    <label for="Description" class="form-label">Wisdom Score</label>
-    <input type="wisdom" class="form-control" id="exampleInputPassword1" name="wisdom" value={{wisdom}}>
-  </div>
-    <label for="Name" class="form-label">Intelligence Score</label>
-    <input type="intelligence" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="intelligence" value={{intelligence}}>
-  </div>
-  <div class="mb-3">
-    <label for="Description" class="form-label">Charisma Score</label>
-    <input type="charisma" class="form-control" id="exampleInputPassword1" name="charisma" value={{charisma}}>
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+            <div >
+                <form action="/characters/create" method="POST">
+                    <div class="mb-3">
+                        <label for="Name" class="form-label">Character Name</label>
+                        <input type="Character Name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="name" value={{dataValues.name}}>
+                    </div>
+                    <div class="mb-3">
+                        <label for="Description" class="form-label">Character Class</label>
+                        <input type="Character Description" class="form-control" id="exampleInputPassword1" name="character_class" value={{dataValues.character_class}}>
+                    </div>
+                    <div class="mb-3">
+                        <label for="Name" class="form-label">Strength Score</label>
+                        <input type="strength" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="strength" value={{dataValues.name}}>
+                    </div>
+                    <div class="mb-3">
+                        <label for="Description" class="form-label">Dexterity Score</label>
+                        <input type="dexterity" class="form-control" id="exampleInputPassword1" name="dexterity" value={{dataValues.character_class}}>
+                    </div>
+                    <div class="mb-3">
+                        <label for="Name" class="form-label">Constitution Score</label>
+                        <input type="constitution" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="constitution" value={{dataValues.name}}>
+                    </div>
+                    <div class="mb-3">
+                        <label for="Description" class="form-label">Wisdom Score</label>
+                        <input type="wisdom" class="form-control" id="exampleInputPassword1" name="wisdom" value={{dataValues.character_class}}>
+                    </div>
+                    <div class="mb-3">
+                        <label for="Name" class="form-label">Intelligence Score</label>
+                        <input type="intelligence" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="intelligence" value={{dataValues.name}}>
+                    </div>
+                    <div class="mb-3">
+                        <label for="Description" class="form-label">Charisma Score</label>
+                        <input type="charisma" class="form-control" id="exampleInputPassword1" name="charisma" value={{dataValues.character_class}}>
+                    </div>
+                    <button type="submit" class="btn btn-primary align-center">Submit</button>
+                    <br>
+                    <br>
+                </form>
+            </div>
+            
+        </div>
+    </div>
+</div>
