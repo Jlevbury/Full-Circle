@@ -1,5 +1,6 @@
 <div class="container">
-    <div class="container border rounded border-0 shadow ">
+  <br>
+    <div class="container border rounded border-0 shadow bg-dark opacity-75">
 <br>
             <div>
                 <h1>Let's build a character</h1>
@@ -8,7 +9,7 @@
                 {{/each}}
             </div>
 
-            <div>
+            <div >
                 <form action="/characters/create" method="POST">
                     <div class="mb-3">
                         <label for="Name" class="form-label">Character Name</label>
@@ -43,6 +44,7 @@
                         <input type="charisma" class="form-control" id="exampleInputPassword1" name="charisma" value={{dataValues.character_class}}>
                     </div>
                     <button type="submit" class="btn btn-primary align-center">Submit</button>
+                    <br>
                     <br>
                 </form>
             </div>
