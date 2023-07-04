@@ -52,3 +52,4 @@ window.onload=function(){
     .querySelector('.equipment-list')
     .addEventListener('click', delButtonHandler);
   }
+
