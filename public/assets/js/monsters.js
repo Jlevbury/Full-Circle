@@ -30,9 +30,7 @@ getData();
 const searchInput = document.querySelector('input[type="search"]');
 const searchButton = document.querySelector('input[type="submit"]');
 
-
 const resultLocation = document.querySelector("#resultLocation");
-
 
 searchButton.addEventListener('click', function(e) {
     e.preventDefault(); 
@@ -40,8 +38,7 @@ searchButton.addEventListener('click', function(e) {
     if (monsterName) {
         getData(monsterName);
     } else {
-        
-        resultLocation.textContent = "Please enter a monster name.";
+        resultLocation.innerHTML = "<li>Please enter a monster name.</li>";
     }
 });
 
@@ -54,15 +51,18 @@ async function getData(monsterName) {
         const response = await fetch(url, options);
         const result = await response.json();
         if (result.error) {
-      
-            resultLocation.textContent = "Monster not found.";
+            resultLocation.innerHTML = "<li>Monster not found.</li>";
         } else {
-            
-            let text = `Name: ${result.name}, Size: ${result.size}, Type: ${result.type}, Alignment: ${result.alignment}, Hit Points: ${result.hit_points}, XP: ${result.xp}`;
-            resultLocation.textContent = text;
+            let text = `<ul><li>Name: ${result.name}</li>
+                        <li>Size: ${result.size}</li>
+                        <li>Type: ${result.type}</li>
+                        <li>Alignment: ${result.alignment}</li>
+                        <li>Hit Points: ${result.hit_points}</li>
+                        <li>XP: ${result.xp}</li></ul>`;
+            resultLocation.innerHTML = text;
         }
     } catch (error) {
         console.log(error);
-        resultLocation.textContent = "Error while fetching data.";
+        resultLocation.innerHTML = "<li>Error while fetching data.</li>";
     }
 }
