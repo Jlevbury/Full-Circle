@@ -3,11 +3,9 @@ const router = express.Router();
 const User = require('../models/User')
 const bcrypt = require('bcrypt');
 const passport = require('passport');
-const { loggedIn } = require('../utils/helpers');
 const { ensureAuthenticated } = require("../config/auth");
 
 router.get('/', (req, res) => {
-    console.log(req.isAuthenticated());
     res.render('index',
     { title: 'homepage',
     bgImage: '/assets/img/mountains__2_.png',
@@ -43,5 +41,14 @@ router.post('/login', (req, res, next) => {
     (req, res, next)
 })
 
+// Logout
+
+router.get('/logout', function(req, res, next) {
+    req.logout(function(err) {
+      if (err) { return next(err); }
+      req.session.destroy();
+      res.redirect('/');
+    });
+  });
 
 module.exports = router;
