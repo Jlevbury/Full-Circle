@@ -7,7 +7,7 @@ const { ensureAuthenticated } = require("../config/auth");
 const Equipment = require("../models/Equipment");
 
 router.get("/create", (req, res) => {
-	res.render('create', { title: 'create', bgImage: '/assets/img/other__12_.png' });
+	res.render("create");
 });
 
 router.get("/search", async (req, res) => {
@@ -75,6 +75,7 @@ router.post("/create", async (req, res) => {
 	const {
 		name,
 		character_class,
+		race,
 		strength,
 		dexterity,
 		constitution,
@@ -103,6 +104,7 @@ router.post("/create", async (req, res) => {
 		await Character.create({
 			name,
 			character_class,
+			race,
 			strength,
 			dexterity,
 			constitution,
