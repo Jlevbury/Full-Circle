@@ -1,4 +1,4 @@
-const resultLocation = document.querySelector("#resultLocation");
+/*const resultLocation = document.querySelector("#resultLocation");
 async function getData() {
   const url = "https://www.dnd5eapi.co/api/monsters";
   const parameters = {
@@ -25,3 +25,44 @@ async function getData() {
   }
 }
 getData();
+*/
+
+const searchInput = document.querySelector('input[type="search"]');
+const searchButton = document.querySelector('input[type="submit"]');
+
+
+const resultLocation = document.querySelector("#resultLocation");
+
+
+searchButton.addEventListener('click', function(e) {
+    e.preventDefault(); 
+    const monsterName = searchInput.value;  
+    if (monsterName) {
+        getData(monsterName);
+    } else {
+        
+        resultLocation.textContent = "Please enter a monster name.";
+    }
+});
+
+async function getData(monsterName) {
+    const url = `https://www.dnd5eapi.co/api/monsters/${monsterName}`;
+    const options = {
+        method: "GET",
+    };
+    try {
+        const response = await fetch(url, options);
+        const result = await response.json();
+        if (result.error) {
+      
+            resultLocation.textContent = "Monster not found.";
+        } else {
+            
+            let text = `Name: ${result.name}, Size: ${result.size}, Type: ${result.type}, Alignment: ${result.alignment}, Hit Points: ${result.hit_points}, XP: ${result.xp}`;
+            resultLocation.textContent = text;
+        }
+    } catch (error) {
+        console.log(error);
+        resultLocation.textContent = "Error while fetching data.";
+    }
+}
