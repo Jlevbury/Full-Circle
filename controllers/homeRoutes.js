@@ -4,10 +4,15 @@ const User = require('../models/User')
 const bcrypt = require('bcrypt');
 const passport = require('passport');
 const { loggedIn } = require('../utils/helpers');
+const { ensureAuthenticated } = require("../config/auth");
 
 router.get('/', (req, res) => {
+    console.log(req.isAuthenticated());
     res.render('index',
-    { title: 'homepage', bgImage: '/assets/img/mountains__2_.png' })
+    { title: 'homepage',
+    bgImage: '/assets/img/mountains__2_.png',
+    logged_in: req.isAuthenticated(),
+})
 });
 
 
@@ -22,7 +27,7 @@ router.get('/dashboard', (req, res) => {
 router.get('/login', (req, res) => {
     const {email, password} = req.body;
     let errors = [];
-    res.render('homepage',
+    res.render('login',
     { bgImage: '/assets/img/other__11_.png',
     email,
     password });
