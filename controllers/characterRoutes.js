@@ -75,6 +75,7 @@ router.post("/create", async (req, res) => {
 	const {
 		name,
 		character_class,
+		race,
 		strength,
 		dexterity,
 		constitution,
@@ -103,6 +104,7 @@ router.post("/create", async (req, res) => {
 		await Character.create({
 			name,
 			character_class,
+			race,
 			strength,
 			dexterity,
 			constitution,

@@ -19,6 +19,10 @@ Character.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    race: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     strength: {
       type: DataTypes.INTEGER,
       allowNull: false,
