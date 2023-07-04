@@ -7,7 +7,7 @@ const { ensureAuthenticated } = require("../config/auth");
 const Equipment = require("../models/Equipment");
 
 router.get("/create", (req, res) => {
-	res.render("create");
+	res.render('create', { title: 'create', bgImage: '/assets/img/other__12_.png' });
 });
 
 router.get("/search", async (req, res) => {
