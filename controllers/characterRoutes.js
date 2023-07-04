@@ -7,7 +7,7 @@ const { ensureAuthenticated } = require("../config/auth");
 const Equipment = require("../models/Equipment");
 
 router.get("/create", (req, res) => {
-	res.render('create', { title: 'create', bgImage: '/assets/img/other__12_.png' });
+	res.render("create");
 });
 
 router.get("/search", async (req, res) => {
@@ -75,6 +75,7 @@ router.post("/create", async (req, res) => {
 	const {
 		name,
 		character_class,
+		race,
 		strength,
 		dexterity,
 		constitution,
@@ -91,6 +92,27 @@ router.post("/create", async (req, res) => {
 	if (!character_class) {
 		errors.push({ text: "Please add a character description" });
 	}
+	if (!race) {
+		errors.push({ text: "Please add a character race" });
+	}
+	if (!strength) {
+		errors.push({ text: "Please add a strength score" });
+	}
+	if (!dexterity) {
+		errors.push({ text: "Please add a dexterity score" });
+	}
+	if (!constitution) {
+		errors.push({ text: "Please add a constitution score" });
+	}
+	if (!wisdom) {
+		errors.push({ text: "Please add a wisdom score" });
+	}
+	if (!intelligence) {
+		errors.push({ text: "Please add an intelligence score" });
+	}
+	if (!charisma) {
+		errors.push({ text: "Please add a charisma score" });
+	}	
 
 	//Check for errors
 	if (errors.length > 0) {
@@ -98,11 +120,19 @@ router.post("/create", async (req, res) => {
 			errors,
 			name,
 			character_class,
+			race,
+			strength,
+			dexterity,
+			constitution,
+			wisdom,
+			intelligence,
+			charisma,
 		});
 	} else {
 		await Character.create({
 			name,
 			character_class,
+			race,
 			strength,
 			dexterity,
 			constitution,
