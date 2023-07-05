@@ -1,12 +1,11 @@
 <section>
-    <div class="container border rounded border-0 shadow vh-auto"><br>
-        <div class="row flex-fill">
-            <div class="col text-center text-md-start d-flex d-sm-flex d-md-flex justify-content-center align-items-center" style="margin-bottom: 5px;padding-bottom: 43px;backdrop-filter: opacity(1) brightness(72%);background: var(--bs-focus-ring-color);border-radius: 6px;filter: contrast(132%)  saturate(51%);">
-                <div style="w-auto p-3" >
-                    <h1 class="text-uppercase fw-bold">Rule lookup</h1>
-                    <p class="lead text-dark-emphasis text-opacity-75 my-3 " style="padding-top: 0px;padding-left: 24px;padding-right: 24px;margin-top: 5px;margin-bottom: 5px;">From pickpocketing to hurling your party member like a cannon ball, find the rules to fight the DM, they know you&#39;re right, now&#39;s your chance to prove it!</p>
-                    <div id="rule-lookup">
-                        <select id="rule-search">
+    <div class="container border rounded border-0 shadow vh-auto">
+        <div class="row justify-content-center">
+            <div class="col-10 text-center" style="mx-auto ;backdrop-filter: opacity(1) brightness(72%);background: var(--bs-focus-ring-color);border-radius: 6px;filter: contrast(132%)  saturate(51%);">
+                <h1 class="text-uppercase fw-bold my-4">Rule lookup</h1>
+                <p class="lead text-dark-emphasis text-opacity-100 my-3">From pickpocketing to hurling your party member like a cannon ball, find the rules to fight the DM, they know you&#39;re right, now&#39;s your chance to prove it!</p>
+                <div id="rule-lookup" class="d-flex flex-column align-items-center my-3">
+                    <select id="rule-search" class="mb-3">
                             <option value="ability-checks">Ability Checks</option>
                             <option value="ability-scores-and-modifiers">Ability Scores and Modifiers</option>
                             <option value="actions-in-combat">Actions in Combat</option>
@@ -37,10 +36,9 @@
                             <option value="underwater-combat">Underwater Combat</option>
                             <option value="using-each-ability">Using Each Ability</option>
                             <option value="what-is-a-spell">What is a Spell</option>
-                        </select>
-                        <button id="lookup-button" type="button" class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#rule-info">Look up rule</button>
-                        <div id="rule-info" class="collapse">
-                        </div>
+                          </select>
+                    <button id="lookup-button" type="button" class="btn btn-primary mb-3" data-bs-toggle="collapse" data-bs-target="#rule-info">Look up rule</button>
+                    <div id="rule-info" class="collapse">
                     </div>
                 </div>
             </div>

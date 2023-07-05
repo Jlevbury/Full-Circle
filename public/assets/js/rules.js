@@ -9,7 +9,7 @@ document.getElementById('lookup-button').addEventListener('click', function() {
             let converter = new showdown.Converter(),
             html = converter.makeHtml(data.desc);
 
-            ruleInfoDiv.innerHTML = `<h2>${data.name}</h2>`;
+            ruleInfoDiv.innerHTML = `<h2></h2>`;
             ruleInfoDiv.innerHTML += `<p>${html}</p>`;
         })
         .catch(error => {
