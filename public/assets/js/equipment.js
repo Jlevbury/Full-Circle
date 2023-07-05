@@ -1,7 +1,6 @@
 const newEquipmentHandler = async (event) => {
     event.preventDefault();
   
-    
     const item = document.querySelector('#equipment-desc').value.trim();
     const character_id = document.querySelector('#character-id').value;
   
@@ -15,7 +14,6 @@ const newEquipmentHandler = async (event) => {
       });
      
       if (response.ok) {
-        console.log(item, character_id);
         document.location.replace(`/characters/${character_id}`);
       } else {
         alert('Failed to add equipment');
@@ -42,6 +40,50 @@ const newEquipmentHandler = async (event) => {
     }
   };
 
+  // Spellbook code
+
+  const newSpellHandler = async (event) => {
+    event.preventDefault();
+
+    const spell = document.querySelector('#spell-desc').value.trim();
+    const character_id = document.querySelector('#character-id-repeat').value;
+
+    if (spell) {
+        const response = await fetch(`/api/spell`, {
+        method: 'POST',
+        body: JSON.stringify({ spell, character_id }),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+     
+      if (response.ok) {
+        document.location.replace(`/characters/${character_id}`);
+      } else {
+        alert('Failed to add spell');
+      }
+    }
+    
+  };
+
+  const delSpellHandler = async (event) => {
+
+    const character_id = document.querySelector('#character-id').value;
+
+    if (event.target.hasAttribute('data-id')) {
+      const id = event.target.getAttribute('data-id');
+
+      const response = await fetch(`/api/spell/${id}`, {
+        method: 'DELETE',
+      });
+
+      if (response.ok) {
+        document.location.replace(`/characters/${character_id}`);
+      } else {
+        alert('Failed to delete spell');
+      }
+    }
+  };
 
 window.onload=function(){
   document
@@ -51,5 +93,13 @@ window.onload=function(){
     document
     .querySelector('.equipment-list')
     .addEventListener('click', delButtonHandler);
-  }
+
+    document
+    .querySelector('.new-spell-form')
+    .addEventListener('submit', newSpellHandler);
+    
+    document
+    .querySelector('.spell-list')
+    .addEventListener('click', delSpellHandler);
+  };
 

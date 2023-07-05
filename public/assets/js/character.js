@@ -1,4 +1,4 @@
-  const delButtonHandler = async (event) => {
+  const delCharacterHandler = async (event) => {
 
     if (event.target.hasAttribute('data-id')) {
       const id = event.target.getAttribute('data-id');
@@ -23,5 +23,5 @@
 window.onload=function(){
     document
     .querySelector('.character-list')
-    .addEventListener('click', delButtonHandler);
-  }
+    .addEventListener('click', delCharacterHandler);
+  };

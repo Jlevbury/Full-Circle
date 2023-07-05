@@ -2,14 +2,7 @@ const User = require('./User');
 const Character = require('./Character');
 const Ideals = require('./Ideals');
 const Equipment = require('./Equipment');
-
-// Character.associate = function(models) {
-//   Character.hasMany(models.Equipment);
-// };
-
-// Equipment.associate = function(models) {
-//   Equipment.belongsTo(models.Character);
-// };
+const Spellbook = require('./Spellbook');
 
 
 User.hasMany(Character, {
@@ -25,9 +18,6 @@ Character.hasMany(Ideals, {
   foreignKey: 'character_id'
 })
 
-// has many attacks, traits, equipment,
-
-
 Ideals.belongsTo(Character, {
   foreignKey: 'character_id'
 })
@@ -41,4 +31,12 @@ Equipment.belongsTo(Character, {
   foreignKey: 'character_id'
 });
 
-module.exports = { User, Character, Equipment };
+Character.hasMany(Spellbook, {
+  foreignKey: 'character_id'
+});
+
+Spellbook.belongsTo(Character, {
+  foreignKey: 'character_id'
+});
+
+module.exports = { User, Character, Equipment, Spellbook };

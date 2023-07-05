@@ -5,6 +5,7 @@ const Sequelize = require("sequelize");
 const Op = Sequelize.Op;
 const { ensureAuthenticated } = require("../config/auth");
 const Equipment = require("../models/Equipment");
+const Spellbook = require('../models/Spellbook');
 
 router.get("/create", (req, res) => {
 	res.render("create",  { title: 'create', bgImage: '/assets/img/other__12_.png'});
@@ -56,6 +57,9 @@ router.get("/:id", async (req, res) => {
 			include: [
 				{
 					model: Equipment
+				},
+				{
+					model: Spellbook
 				}
 			]
 		});
