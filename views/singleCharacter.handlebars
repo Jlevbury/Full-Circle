@@ -1,4 +1,4 @@
-<div class="containter">
+<div class="container">
   <div class="container border rounded border-0 shadow ">
   <div class="col  text-center text-md-start d-flex d-sm-flex d-md-flex justify-content-center align-items-center " style="mx-auto ;">
                     
@@ -8,23 +8,25 @@
 <!--h3>This is the home of {{name}} the {{character_class}}</h3-->
 
 <h4>Strength!</h4>
-{{strength}}
+<p id="strength">{{strength}}</p>
+
 <ul class="list-group">
   <li class="list-group-item d-flex justify-content-between align-items-center">
-    Athletics
-    <span class="badge bg-light text-dark rounded-pill">14</span>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="" id="checkboxAthletics">
+      <label class="form-check-label" for="checkboxAthletics">
+        Athletics
+      </label>
+    </div>
+    <span class="badge bg-light text-dark rounded-pill">{{character_modifier strength }}</span>
   </li>
   
   <li class="list-group-item d-flex justify-content-between align-items-center">
     Saving Throw
-    <span class="badge bg-light text-dark rounded-pill">1</span>
+    <span class="badge bg-light text-dark rounded-pill">{{character_modifier strength false}}</span>
   </li>
-<!--ul class="list-group list-group-horizontal">
-  <li class="list-group-item">Athletics</li>
-   <li class="list-group-item">Saving Throw</li>
-</ul>
-<ul class="list-group list-group-horizontal-sm">
-  <li class="list-group-item">4</li>
+
+
 </ul>-->
 <h4>Dexterity!</h4>
 {{dexterity}}
@@ -38,19 +40,19 @@
 <ul class="list-group">
   <li class="list-group-item d-flex justify-content-between align-items-center">
     Stealth
-    <span class="badge bg-light text-dark rounded-pill">14</span>
+    <span class="badge bg-light text-dark rounded-pill">{{character_modifier dexterity false}}</span>
   </li>
   <li class="list-group-item d-flex justify-content-between align-items-center">
     Sleight of hand
-    <span class="badge bg-light text-dark rounded-pill">2</span>
+    <span class="badge bg-light text-dark rounded-pill">{{character_modifier dexterity false}}</span>
   </li>
   <li class="list-group-item d-flex justify-content-between align-items-center">
     Acrobatics
-    <span class="badge bg-light text-dark rounded-pill">1</span>
+    <span class="badge bg-light text-dark rounded-pill">{{character_modifier dexterity true}}</span>
   </li>
   <li class="list-group-item d-flex justify-content-between align-items-center">
     Saving Throw
-    <span class="badge bg-light text-dark rounded-pill">1</span>
+    <span class="badge bg-light text-dark rounded-pill">{{character_modifier dexterity false}}</span>
   </li>
 </ul>
 <!--ul class="list-group list-group-horizontal-lg">
@@ -64,7 +66,7 @@
  
   <li class="list-group-item d-flex justify-content-between align-items-center">
     Saving Throw
-    <span class="badge bg-light text-dark rounded-pill">1</span>
+    <span class="badge bg-light text-dark rounded-pill">{{character_modifier constitution false}}</span>
   </li>
 <!--ul class="list-group list-group-horizontal-sm">
   <li class="list-group-item">Saving Throw</li>
@@ -77,23 +79,23 @@
 <ul class="list-group">
   <li class="list-group-item d-flex justify-content-between align-items-center">
     Arcana
-    <span class="badge bg-light text-dark rounded-pill">14</span>
+    <span class="badge bg-light text-dark rounded-pill">{{character_modifier intelligence true}}</span>
   </li>
   <li class="list-group-item d-flex justify-content-between align-items-center">
     History
-    <span class="badge bg-light text-dark rounded-pill">2</span>
+    <span class="badge bg-light text-dark rounded-pill">{{character_modifier intelligence false}}</span>
   </li>
   <li class="list-group-item d-flex justify-content-between align-items-center">
     Investigation
-    <span class="badge bg-light text-dark rounded-pill">1</span>
+    <span class="badge bg-light text-dark rounded-pill">{{character_modifier intelligence false}}</span>
   </li>
   <li class="list-group-item d-flex justify-content-between align-items-center">
     Nature
-    <span class="badge bg-light text-dark rounded-pill">1</span>
+    <span class="badge bg-light text-dark rounded-pill">{{character_modifier intelligence true}}</span>
   </li>
   <li class="list-group-item d-flex justify-content-between align-items-center">
     Religion
-    <span class="badge bg-light text-dark rounded-pill">1</span>
+    <span class="badge bg-light text-dark rounded-pill">{{character_modifier intelligence false}}</span>
   </li>
 </ul>
 <!--ul class="list-group list-group-horizontal-sm">
@@ -114,47 +116,31 @@
 </ul-->
 <h4>Wisdom!</h4>
 {{wisdom}}
-<!--ul class="list-group list-group-horizontal-sm">
-  <li class="list-group-item">Animal Handling</li>
-  <li class="list-group-item">Insight</li>
-  <li class="list-group-item">Meidicne</li>
-  <li class="list-group-item">Perception</li>
-  <li class="list-group-item">Survival</li>
-   <li class="list-group-item">Saving Throw</li>
-   
-</ul>
-<-ul class="list-group list-group-horizontal-lg">
-    <li class="list-group-item">4</li>
-    <li class="list-group-item">4</li>
-    <li class="list-group-item">4</li>
-    <li class="list-group-item">4</li>
-    <li class="list-group-item">4</li>
-    <li class="list-group-item">4</li>
-</ul-->
+
 <ul class="list-group">
   <li class="list-group-item d-flex justify-content-between align-items-center">
     Animal Handling
-    <span class="badge bg-light text-dark rounded-pill">14</span>
+    <span class="badge bg-light text-dark rounded-pill">{{character_modifier wisdom false}}</span>
   </li>
   <li class="list-group-item d-flex justify-content-between align-items-center">
     Insight
-    <span class="badge bg-light text-dark rounded-pill">2</span>
+    <span class="badge bg-light text-dark rounded-pill">{{character_modifier wisdom false}}</span>
   </li>
   <li class="list-group-item d-flex justify-content-between align-items-center">
     Medicine
-    <span class="badge bg-light text-dark rounded-pill">1</span>
+    <span class="badge bg-light text-dark rounded-pill">{{character_modifier wisdom true}}</span>
   </li>
   <li class="list-group-item d-flex justify-content-between align-items-center">
     Perception
-    <span class="badge bg-light text-dark rounded-pill">1</span>
+    <span class="badge bg-light text-dark rounded-pill">{{character_modifier wisdom false}}</span>
   </li>
   <li class="list-group-item d-flex justify-content-between align-items-center">
     Survival
-    <span class="badge bg-light text-dark rounded-pill">1</span>
+    <span class="badge bg-light text-dark rounded-pill">{{character_modifier wisdom true}}</span>
   </li>
   <li class="list-group-item d-flex justify-content-between align-items-center">
     Saving Throw
-    <span class="badge bg-light text-dark rounded-pill">1</span>
+    <span class="badge bg-light text-dark rounded-pill">{{character_modifier wisdom false}}</span>
   </li>
 </ul>
 <h4>Charisma!</h4>
@@ -175,23 +161,23 @@
 <ul class="list-group">
   <li class="list-group-item d-flex justify-content-between align-items-center">
     Deception
-    <span class="badge bg-light text-dark rounded-pill">14</span>
+    <span class="badge bg-light text-dark rounded-pill">{{character_modifier charisma false}}</span>
   </li>
   <li class="list-group-item d-flex justify-content-between align-items-center">
     Intimidation
-    <span class="badge bg-light text-dark rounded-pill">2</span>
+    <span class="badge bg-light text-dark rounded-pill">{{character_modifier charisma true}}</span>
   </li>
   <li class="list-group-item d-flex justify-content-between align-items-center">
     Performance
-    <span class="badge bg-light text-dark rounded-pill">1</span>
+    <span class="badge bg-light text-dark rounded-pill">{{character_modifier charisma false}}</span>
   </li>
   <li class="list-group-item d-flex justify-content-between align-items-center">
     Persuasion
-    <span class="badge bg-light text-dark rounded-pill">1</span>
+    <span class="badge bg-light text-dark rounded-pill">{{character_modifier charisma true}}</span>
   </li>
   <li class="list-group-item d-flex justify-content-between align-items-center">
     Saving Throw
-    <span class="badge bg-light text-dark rounded-pill">1</span>
+    <span class="badge bg-light text-dark rounded-pill">{{character_modifier charisma true}}</span>
   </li>
 </ul>
 
@@ -272,5 +258,6 @@
 </div>
 <br><br>
 <script src="/assets/js/equipment.js"></script>
+<script src="/assets/js/character.js"></script>
 </div>
 </div>

@@ -7,10 +7,14 @@ const flash = require('connect-flash')
 const session = require('express-session')
 const passport = require('passport')
 const routes = require('./controllers')
+const helpers = require('./utils/helpers');
 
 
 // Passport Config
 require('./config/passport')(passport);
+
+// Helpers
+const hbs = exphbs.create({ helpers });
 
 // Database
 const sequelize = require('./config/connection');
@@ -26,7 +30,7 @@ sequelize.authenticate()
     );
 
 // Handlebars
-app.engine('handlebars', exphbs({ defaultLayout: 'main'}));
+app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
 // Body parser
