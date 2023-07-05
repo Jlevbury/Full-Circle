@@ -3,7 +3,7 @@ const router = express.Router();
 const Sequelize = require("sequelize");
 const Op = Sequelize.Op;
 const { ensureAuthenticated } = require("../config/auth");
-const { Character, Equipment, Spellbook, Features } = require("../models");
+const { Character, Equipment, Spellbook, Features, Journal } = require("../models");
 
 router.get("/create", (req, res) => {
 	res.render("create",  { title: 'create', bgImage: '/assets/img/other__12_.png'});
@@ -60,6 +60,9 @@ router.get("/:id", async (req, res) => {
 				},
 				{
 					model: Features
+				},
+				{
+					model: Journal
 				}
 			]
 		});

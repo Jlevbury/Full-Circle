@@ -138,6 +138,51 @@ const newEquipmentHandler = async (event) => {
     }
   };
 
+// Journal Code
+
+const newEntryHandler = async (event) => {
+  event.preventDefault();
+
+  const entry = document.querySelector('#entry-desc').value.trim();
+  const character_id = document.querySelector('#journal-character-id').value;
+
+  if (entry) {
+      const response = await fetch(`/api/journal`, {
+      method: 'POST',
+      body: JSON.stringify({ entry, character_id }),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+   
+    if (response.ok) {
+      document.location.replace(`/characters/${character_id}`);
+    } else {
+      alert('Failed to add entry');
+    }
+  }
+  
+};
+
+const delEntryHandler = async (event) => {
+
+  const character_id = document.querySelector('#character-id').value;
+
+  if (event.target.hasAttribute('data-id')) {
+    const id = event.target.getAttribute('data-id');
+
+    const response = await fetch(`/api/journal/${id}`, {
+      method: 'DELETE',
+    });
+
+    if (response.ok) {
+      document.location.replace(`/characters/${character_id}`);
+    } else {
+      alert('Failed to delete spell');
+    }
+  }
+};
+
 window.onload=function(){
   document
     .querySelector('.new-equipment-form')
@@ -162,5 +207,13 @@ window.onload=function(){
     document
     .querySelector('.feature-list')
     .addEventListener('click', delFeaturesHandler)
+
+    document
+    .querySelector('.new-journal-form')
+    .addEventListener('submit', newEntryHandler);
+
+    document
+    .querySelector('.journal-list')
+    .addEventListener('click', delEntryHandler)
   };
 

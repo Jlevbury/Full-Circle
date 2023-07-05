@@ -356,7 +356,49 @@
     </div>
 </div>
 <br><br>
+
+{{!-- Journal Code --}}
+
+<br><br>
+<div class="card text-center">
+  <div class="card-header">
+   <h3>What's in your explorer's journal, {{name}}</h3>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Journal</h5>
+    <form class="form new-journal-form">
+        <input type="hidden" value="{{id}}" name="journal-character-id" id="journal-character-id">
+        <div class="form-group">
+          <!--label for="equipment-desc">Add New Equipment:</label-->
+          <br>
+          <textarea class="form-input" placeholder="Add new entry" id="entry-desc" name="entry-desc"></textarea>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary">Add to explorer's notes!</button>
+        </div>
+      </form>
+    
+  </div>
+  <div class="card-footer text-muted">
+    <h4>Current Entries</h4>
+  </div>
+
+    <div class="journal-list">
+      {{#each journals}}
+        
+          <P>{{entry}}</p> 
+         <button type ="submit" class="btn btn-sm btn-danger" data-id="{{id}}">DELETE</button>
+    {{ else }}
+
+        <p>No current entries</p>
+  
+      {{/each}}
+
+    </div>
+</div>
+
+</div>
+</div>
+
 <script src="/assets/js/character.js"></script>
 <script src="/assets/js/equipment.js"></script>
-</div>
-</div>
