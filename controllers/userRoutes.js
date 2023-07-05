@@ -6,7 +6,9 @@ const passport = require('passport')
 
 
 //Register Page
+
 router.get('/register', (req, res) => res.render('register'));
+
 
 //Register Handle
 router.post('/register', (req, res) => {
@@ -41,30 +43,30 @@ router.post('/register', (req, res) => {
                         name,
                         email,
                         password
-                })
-            } else {
-                const newUser = new User({
+                    })
+                } else {
+                    const newUser = new User({
                     name,
                     email,
                     password
                 });
                 
                 // Hash password
-                bcrypt.genSalt(10, (err, salt) =>
-                    bcrypt.hash(newUser.password, salt, (error, hash) =>{
-                        if(err) throw err;
-                        // Set password to hashed
-                        newUser.password = hash;
-                        // Save user
-                        newUser.save()
-                            .then(user => {
-                                req.flash('success_msg', 'You are now registered and can log in');
-                                res.redirect('/users/login')
-                            })
-                            .catch(err => console.log(err));
-                }))
-            }
-        });  
+            bcrypt.genSalt(10, (err, salt) =>
+                bcrypt.hash(newUser.password, salt, (error, hash) =>{
+                    if(err) throw err;
+                    // Set password to hashed
+                    newUser.password = hash;
+                    // Save user
+                    newUser.save()
+                        .then(user => {
+                            req.flash('success_msg', 'You are now registered and can log in');
+                            res.redirect('/users/login')
+                        })
+                        .catch(err => console.log(err));
+            }))
+        }
+    });  
     }
 });
 
@@ -74,9 +76,9 @@ router.get('/login', (req, res) => {
     const {email, password} = req.body;
     let errors = [];
     res.render('login',
-    { bgImage: '/assets/img/other__11_.png',
-    email,
-    password });
+        { bgImage: '/assets/img/other__11_.png',
+        email,
+        password });
 });
 
 router.post('/login', (req, res, next) => {

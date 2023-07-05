@@ -1,6 +1,8 @@
 const router = require('express').Router();
 const { Equipment } = require('../../models');
 
+//This adds equipment
+
 router.post('/', async (req, res) => {
     try {
       const newEquipment = await Equipment.create({
@@ -13,6 +15,8 @@ router.post('/', async (req, res) => {
     }
   });
   
+  //This deletes equipment
+
   router.delete('/:id', async (req, res) => {
     try {
       const equipmentData = await Equipment.destroy({

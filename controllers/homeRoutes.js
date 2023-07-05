@@ -5,6 +5,7 @@ const bcrypt = require('bcryptjs');
 const passport = require('passport');
 const { ensureAuthenticated } = require("../config/auth");
 
+// This loads the main page
 router.get('/', (req, res) => {
     res.render('index',
     { title: 'homepage',
