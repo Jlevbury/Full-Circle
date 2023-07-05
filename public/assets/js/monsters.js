@@ -1772,21 +1772,46 @@ function populateMonsterDropdown(monsters) {
 }
 
 async function getData(monsterIndex) {
-    const url = `https://www.dnd5eapi.co/api/monsters/${monsterIndex}`;
-    const options = {
-        method: "GET",
-    };
-    try {
-        const response = await fetch(url, options);
-        const result = await response.json();
-        if (result.error) {
-            resultLocation.textContent = "Monster not found.";
-        } else {
-            let text = `Name: ${result.name}, Size: ${result.size}, Type: ${result.type}, Alignment: ${result.alignment}, Hit Points: ${result.hit_points}, XP: ${result.xp}`;
-            resultLocation.textContent = text;
-        }
-    } catch (error) {
-        console.log(error);
-        resultLocation.textContent = "Error while fetching data.";
-    }
+  const url = `https://www.dnd5eapi.co/api/monsters/${monsterIndex}`;
+  const options = {
+      method: "GET",
+  };
+  try {
+      const response = await fetch(url, options);
+      const result = await response.json();
+      if (result.error) {
+          resultLocation.textContent = "Monster not found.";
+      } else {
+          // Clear the existing content
+          resultLocation.innerHTML = '';
+
+          // Create and append a new list item for each piece of information
+          let name = document.createElement('li');
+          name.textContent = `Name: ${result.name}`;
+          resultLocation.appendChild(name);
+
+          let size = document.createElement('li');
+          size.textContent = `Size: ${result.size}`;
+          resultLocation.appendChild(size);
+
+          let type = document.createElement('li');
+          type.textContent = `Type: ${result.type}`;
+          resultLocation.appendChild(type);
+
+          let alignment = document.createElement('li');
+          alignment.textContent = `Alignment: ${result.alignment}`;
+          resultLocation.appendChild(alignment);
+
+          let hitPoints = document.createElement('li');
+          hitPoints.textContent = `Hit Points: ${result.hit_points}`;
+          resultLocation.appendChild(hitPoints);
+
+          let xp = document.createElement('li');
+          xp.textContent = `XP: ${result.xp}`;
+          resultLocation.appendChild(xp);
+      }
+  } catch (error) {
+      console.log(error);
+      resultLocation.textContent = "Error while fetching data.";
+  }
 }
