@@ -8,7 +8,7 @@ const { ensureAuthenticated } = require("../config/auth");
 router.get('/', (req, res) => {
     res.render('index',
     { title: 'homepage',
-    bgImage: '/assets/img/mountains__2_.png',
+    
     logged_in: req.isAuthenticated(),
 })
 });
