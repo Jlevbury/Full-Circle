@@ -212,6 +212,9 @@
     </div>
   </div>
 </div-->
+
+{{!-- Equipment Code --}}
+
 <br><br>
 <div class="card text-center">
   <div class="card-header">
@@ -251,6 +254,8 @@
     </div>
 </div>
 
+{{!-- Spellbook Code --}}
+
 <br><br>
 <div class="card text-center">
   <div class="card-header">
@@ -289,8 +294,67 @@
     </div>
 </div>
 
+{{!-- Features and Traits Code --}}
 
+<br><br>
+<div class="card text-center">
+  <div class="card-header">
+   <h3>Let's describe your character, {{name}}</h3>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Features and Traits</h5>
+    <form class="form new-features-form">
+        <input type="hidden" value="{{id}}" name="features-character-id" id="features-character-id">
+        <div class="form-group">
+          <!--label for="equipment-desc">Add New Equipment:</label-->
+          <br>
+            <textarea class="form-input" placeholder="Add new ideals" id="ideals-desc" name="ideals-desc"></textarea>
+            <textarea class="form-input" placeholder="Add new personality traits" id="traits-desc" name="traits-desc"></textarea>
+          <br>
+            <textarea class="form-input" placeholder="Add new bonds" id="bonds-desc" name="bonds-desc"></textarea>
+            <textarea class="form-input" placeholder="Add new flaws traits" id="flaws-desc" name="flaws-desc"></textarea>
+            <br>
+            <textarea class="form-input" placeholder="Add new features" id="features-desc" name="features-desc"></textarea>
+            <textarea class="form-input" placeholder="Add new proficiencies traits" id="proficiencies-desc" name="proficiencies-desc"></textarea>
+               <br>
+            <textarea class="form-input" placeholder="Add new languages" id="languages-desc" name="languages-desc"></textarea>
+    
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary">Add to features!</button>
+        </div>
+      </form>
+    
+  </div>
+  <div class="card-footer text-muted">
+    Current Features
+  </div>
 
+    <div class="feature-list">
+      {{#each features}}
+        <h6>Ideals</h6>
+          <P>{{ideals}}</p> 
+        <h6>Personality Traits</h6>
+          <P>{{personality_traits}}</p> 
+        <h6>Bonds</h6> 
+          <P>{{bonds}}</p> 
+        <h6>Flaws</h6>
+          <P>{{flaws}}</p> 
+        <h6>Features</h6>
+          <P>{{features}}</p> 
+        <h6>Proficiencies</h6>
+          <P>{{proficiencies}}</p> 
+        <h6>Languages</h6>
+          <P>{{languages}}</p> 
+         <button type ="submit" class="btn btn-sm btn-danger" data-id="{{id}}">DELETE</button>
+    {{ else }}
+
+        <p>No current features</p>
+  
+      {{/each}}
+
+    </div>
+</div>
 <br><br>
 <script src="/assets/js/character.js"></script>
 <script src="/assets/js/equipment.js"></script>

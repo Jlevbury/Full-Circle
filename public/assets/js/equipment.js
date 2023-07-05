@@ -85,6 +85,59 @@ const newEquipmentHandler = async (event) => {
     }
   };
 
+  // Features Code
+
+  const newFeaturesHandler = async (event) => {
+    event.preventDefault();
+
+    const ideals = document.querySelector('#ideals-desc').value.trim();
+    const personality_traits = document.querySelector('#traits-desc').value.trim();
+    const bonds = document.querySelector('#bonds-desc').value.trim();
+    const flaws = document.querySelector('#flaws-desc').value.trim();
+    const features = document.querySelector('#features-desc').value.trim();
+    const proficiencies = document.querySelector('#proficiencies-desc').value.trim();
+    const languages = document.querySelector('#languages-desc').value.trim();
+    const character_id = document.querySelector('#character-id-repeat').value;
+
+    console.log( ideals, personality_traits, bonds, flaws, features, proficiencies, languages);
+
+    if (ideals || personality_traits || bonds || flaws || features || proficiencies || languages) {
+        const response = await fetch(`/api/features`, {
+        method: 'POST',
+        body: JSON.stringify({ ideals, personality_traits, bonds, flaws, features, proficiencies, languages, character_id }),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+     
+      if (response.ok) {
+        document.location.replace(`/characters/${character_id}`);
+      } else {
+        alert('Failed to add spell');
+      }
+    }
+    
+  };
+
+  const delFeaturesHandler = async (event) => {
+
+    const character_id = document.querySelector('#features-character-id').value;
+
+    if (event.target.hasAttribute('data-id')) {
+      const id = event.target.getAttribute('data-id');
+
+      const response = await fetch(`/api/features/${id}`, {
+        method: 'DELETE',
+      });
+
+      if (response.ok) {
+        document.location.replace(`/characters/${character_id}`);
+      } else {
+        alert('Failed to delete features');
+      }
+    }
+  };
+
 window.onload=function(){
   document
     .querySelector('.new-equipment-form')
@@ -101,5 +154,13 @@ window.onload=function(){
     document
     .querySelector('.spell-list')
     .addEventListener('click', delSpellHandler);
+
+    document
+    .querySelector('.new-features-form')
+    .addEventListener('submit', newFeaturesHandler);
+
+    document
+    .querySelector('.feature-list')
+    .addEventListener('click', delFeaturesHandler)
   };
 

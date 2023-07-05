@@ -1,11 +1,9 @@
 const express = require("express");
 const router = express.Router();
-const Character = require("../models/Character");
 const Sequelize = require("sequelize");
 const Op = Sequelize.Op;
 const { ensureAuthenticated } = require("../config/auth");
-const Equipment = require("../models/Equipment");
-const Spellbook = require('../models/Spellbook');
+const { Character, Equipment, Spellbook, Features } = require("../models");
 
 router.get("/create", (req, res) => {
 	res.render("create",  { title: 'create', bgImage: '/assets/img/other__12_.png'});
@@ -59,10 +57,14 @@ router.get("/:id", async (req, res) => {
 				},
 				{
 					model: Spellbook
+				},
+				{
+					model: Features
 				}
 			]
 		});
 		const character = characterData.get({ plain: true })
+		console.log(character);
 		res.render("singleCharacter", { 
 			...character });
 	} catch (err) {
