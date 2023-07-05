@@ -47,7 +47,6 @@ router.get("/", async (req, res) => {
 			})),
 		}
 		);
-		console.log(characters)
 	}
 });
 
@@ -64,7 +63,6 @@ router.get("/:id", async (req, res) => {
 			]
 		});
 		const character = characterData.get({ plain: true })
-		console.log(character);
 		res.render("singleCharacter", { 
 			...character });
 	} catch (err) {
@@ -89,7 +87,6 @@ router.post("/create", async (req, res) => {
 	} = req.body;
 	let errors = [];
 	//Validate fields
-	console.log(req.body);
 	if (!name) {
 		errors.push({ text: "Please add a character name" });
 	}
