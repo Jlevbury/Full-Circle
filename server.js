@@ -24,7 +24,7 @@ sequelize.authenticate()
     .then(() => console.log('Database connected...'))
     .catch(err => console.log('Error: ' + err))
 
-    sequelize.sync({force: true})
+    sequelize.sync({force: (process.env.SQL_FORCE === 'false' ? false : true) })
     .then(
         app.listen(PORT, console.log(`Server started on port ${PORT}`))
     );
