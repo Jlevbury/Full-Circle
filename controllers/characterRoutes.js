@@ -9,21 +9,21 @@ router.get("/create", (req, res) => {
 	res.render("create",  { title: 'create', bgImage: '/assets/img/other__12_.png'});
 });
 
-router.get("/search", async (req, res) => {
-	let term = req.query.search;
-	term = term.toLowerCase();
+// router.get("/search", async (req, res) => {
+// 	let term = req.query.search;
+// 	term = term.toLowerCase();
 
-	try {
-		const characters = await Character.findAll({
-			where: {
-				character_class: { [Op.like]: "%" + term + "%" },
-			},
-		});
-		res.render("characters", { characters })
-	} catch (err) {
-		console.log(err);
-	}
-});
+// 	try {
+// 		const characters = await Character.findAll({
+// 			where: {
+// 				character_class: { [Op.like]: "%" + term + "%" },
+// 			},
+// 		});
+// 		res.render("characters", { characters })
+// 	} catch (err) {
+// 		console.log(err);
+// 	}
+// });
 
 router.get("/", async (req, res) => {
 	let term = req.query.search;
