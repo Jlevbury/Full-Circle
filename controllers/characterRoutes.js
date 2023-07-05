@@ -67,11 +67,10 @@ router.get("/:id", async (req, res) => {
 			]
 		});
 		const character = characterData.get({ plain: true })
-		console.log(character);
-		res.render("singleCharacter", { 
-			...character });
-	} catch (err) {
-		console.log(err);
+			res.render("singleCharacter", { 
+				...character });
+		} catch (err) {
+			console.log(err);
 	}
 });
 
