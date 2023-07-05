@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Stats extends Model {}
+class Journal extends Model {}
 
-Stats.init(
+Journal.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -11,9 +11,8 @@ Stats.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    strength: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
+    entry: {
+      type: DataTypes.STRING,
     },
     character_id: {
       type: DataTypes.INTEGER,
@@ -28,10 +27,8 @@ Stats.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'stats',
+    modelName: 'journal',
   }
 );
 
-module.exports = Stats;
-
-//const ideals = secondaryStats.filter(x => x.category === 'ideals')
+module.exports = Journal;

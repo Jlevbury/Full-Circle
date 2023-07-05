@@ -1,10 +1,9 @@
 const express = require("express");
 const router = express.Router();
-const Character = require("../models/Character");
 const Sequelize = require("sequelize");
 const Op = Sequelize.Op;
 const { ensureAuthenticated } = require("../config/auth");
-const Equipment = require("../models/Equipment");
+const { Character, Equipment, Spellbook, Features, Journal } = require("../models");
 
 router.get("/create", (req, res) => {
 	res.render("create",  { title: 'create', bgImage: '/assets/img/other__12_.png'});
@@ -46,7 +45,6 @@ router.get("/", async (req, res) => {
 			})),
 		}
 		);
-		console.log(characters)
 	}
 });
 
@@ -56,6 +54,15 @@ router.get("/:id", async (req, res) => {
 			include: [
 				{
 					model: Equipment
+				},
+				{
+					model: Spellbook
+				},
+				{
+					model: Features
+				},
+				{
+					model: Journal
 				}
 			]
 		});
@@ -85,7 +92,6 @@ router.post("/create", async (req, res) => {
 	} = req.body;
 	let errors = [];
 	//Validate fields
-	console.log(req.body);
 	if (!name) {
 		errors.push({ text: "Please add a character name" });
 	}

@@ -1,4 +1,4 @@
-<div class="containter">
+<div class="container">
   <div class="container border rounded border-0 shadow ">
   <div class="col  text-center text-md-start d-flex d-sm-flex d-md-flex justify-content-center align-items-center " style="mx-auto ;">
                     
@@ -8,49 +8,45 @@
 <!--h3>This is the home of {{name}} the {{character_class}}</h3-->
 
 <h4>Strength!</h4>
-{{strength}}
+<p id="strength">{{strength}}</p>
+
 <ul class="list-group">
   <li class="list-group-item d-flex justify-content-between align-items-center">
-    Athletics
-    <span class="badge bg-light text-dark rounded-pill">14</span>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="" id="checkboxAthletics">
+      <label class="form-check-label" for="checkboxAthletics">
+        Athletics
+      </label>
+    </div>
+    <span class="badge bg-light text-dark rounded-pill">{{character_modifier strength }}</span>
   </li>
   
   <li class="list-group-item d-flex justify-content-between align-items-center">
     Saving Throw
-    <span class="badge bg-light text-dark rounded-pill">1</span>
+    <span class="badge bg-light text-dark rounded-pill">{{character_modifier strength }}</span>
   </li>
-<!--ul class="list-group list-group-horizontal">
-  <li class="list-group-item">Athletics</li>
-   <li class="list-group-item">Saving Throw</li>
+
+
 </ul>
-<ul class="list-group list-group-horizontal-sm">
-  <li class="list-group-item">4</li>
-</ul>-->
 <h4>Dexterity!</h4>
 {{dexterity}}
-<!--<ul class="list-group list-group-horizontal-sm">
-  <li class="list-group-item">Stealth</li>
-  <li class="list-group-item">Sleight of Hand</li>
-  <li class="list-group-item">Acrobatics</li>
-   <li class="list-group-item">Saving Throw</li>
-  
-</ul>-->
+
 <ul class="list-group">
   <li class="list-group-item d-flex justify-content-between align-items-center">
     Stealth
-    <span class="badge bg-light text-dark rounded-pill">14</span>
+    <span class="badge bg-light text-dark rounded-pill">{{character_modifier dexterity }}</span>
   </li>
   <li class="list-group-item d-flex justify-content-between align-items-center">
     Sleight of hand
-    <span class="badge bg-light text-dark rounded-pill">2</span>
+    <span class="badge bg-light text-dark rounded-pill">{{character_modifier dexterity }}</span>
   </li>
   <li class="list-group-item d-flex justify-content-between align-items-center">
     Acrobatics
-    <span class="badge bg-light text-dark rounded-pill">1</span>
+    <span class="badge bg-light text-dark rounded-pill">{{character_modifier dexterity }}</span>
   </li>
   <li class="list-group-item d-flex justify-content-between align-items-center">
     Saving Throw
-    <span class="badge bg-light text-dark rounded-pill">1</span>
+    <span class="badge bg-light text-dark rounded-pill">{{character_modifier dexterity }}</span>
   </li>
 </ul>
 <!--ul class="list-group list-group-horizontal-lg">
@@ -64,7 +60,7 @@
  
   <li class="list-group-item d-flex justify-content-between align-items-center">
     Saving Throw
-    <span class="badge bg-light text-dark rounded-pill">1</span>
+    <span class="badge bg-light text-dark rounded-pill">{{character_modifier constitution }}</span>
   </li>
 <!--ul class="list-group list-group-horizontal-sm">
   <li class="list-group-item">Saving Throw</li>
@@ -77,23 +73,23 @@
 <ul class="list-group">
   <li class="list-group-item d-flex justify-content-between align-items-center">
     Arcana
-    <span class="badge bg-light text-dark rounded-pill">14</span>
+    <span class="badge bg-light text-dark rounded-pill">{{character_modifier intelligence }}</span>
   </li>
   <li class="list-group-item d-flex justify-content-between align-items-center">
     History
-    <span class="badge bg-light text-dark rounded-pill">2</span>
+    <span class="badge bg-light text-dark rounded-pill">{{character_modifier intelligence }}</span>
   </li>
   <li class="list-group-item d-flex justify-content-between align-items-center">
     Investigation
-    <span class="badge bg-light text-dark rounded-pill">1</span>
+    <span class="badge bg-light text-dark rounded-pill">{{character_modifier intelligence }}</span>
   </li>
   <li class="list-group-item d-flex justify-content-between align-items-center">
     Nature
-    <span class="badge bg-light text-dark rounded-pill">1</span>
+    <span class="badge bg-light text-dark rounded-pill">{{character_modifier intelligence }}</span>
   </li>
   <li class="list-group-item d-flex justify-content-between align-items-center">
     Religion
-    <span class="badge bg-light text-dark rounded-pill">1</span>
+    <span class="badge bg-light text-dark rounded-pill">{{character_modifier intelligence }}</span>
   </li>
 </ul>
 <!--ul class="list-group list-group-horizontal-sm">
@@ -114,47 +110,31 @@
 </ul-->
 <h4>Wisdom!</h4>
 {{wisdom}}
-<!--ul class="list-group list-group-horizontal-sm">
-  <li class="list-group-item">Animal Handling</li>
-  <li class="list-group-item">Insight</li>
-  <li class="list-group-item">Meidicne</li>
-  <li class="list-group-item">Perception</li>
-  <li class="list-group-item">Survival</li>
-   <li class="list-group-item">Saving Throw</li>
-   
-</ul>
-<-ul class="list-group list-group-horizontal-lg">
-    <li class="list-group-item">4</li>
-    <li class="list-group-item">4</li>
-    <li class="list-group-item">4</li>
-    <li class="list-group-item">4</li>
-    <li class="list-group-item">4</li>
-    <li class="list-group-item">4</li>
-</ul-->
+
 <ul class="list-group">
   <li class="list-group-item d-flex justify-content-between align-items-center">
     Animal Handling
-    <span class="badge bg-light text-dark rounded-pill">14</span>
+    <span class="badge bg-light text-dark rounded-pill">{{character_modifier wisdom }}</span>
   </li>
   <li class="list-group-item d-flex justify-content-between align-items-center">
     Insight
-    <span class="badge bg-light text-dark rounded-pill">2</span>
+    <span class="badge bg-light text-dark rounded-pill">{{character_modifier wisdom }}</span>
   </li>
   <li class="list-group-item d-flex justify-content-between align-items-center">
     Medicine
-    <span class="badge bg-light text-dark rounded-pill">1</span>
+    <span class="badge bg-light text-dark rounded-pill">{{character_modifier wisdom }}</span>
   </li>
   <li class="list-group-item d-flex justify-content-between align-items-center">
     Perception
-    <span class="badge bg-light text-dark rounded-pill">1</span>
+    <span class="badge bg-light text-dark rounded-pill">{{character_modifier wisdom }}</span>
   </li>
   <li class="list-group-item d-flex justify-content-between align-items-center">
     Survival
-    <span class="badge bg-light text-dark rounded-pill">1</span>
+    <span class="badge bg-light text-dark rounded-pill">{{character_modifier wisdom }}</span>
   </li>
   <li class="list-group-item d-flex justify-content-between align-items-center">
     Saving Throw
-    <span class="badge bg-light text-dark rounded-pill">1</span>
+    <span class="badge bg-light text-dark rounded-pill">{{character_modifier wisdom }}</span>
   </li>
 </ul>
 <h4>Charisma!</h4>
@@ -175,23 +155,23 @@
 <ul class="list-group">
   <li class="list-group-item d-flex justify-content-between align-items-center">
     Deception
-    <span class="badge bg-light text-dark rounded-pill">14</span>
+    <span class="badge bg-light text-dark rounded-pill">{{character_modifier charisma }}</span>
   </li>
   <li class="list-group-item d-flex justify-content-between align-items-center">
     Intimidation
-    <span class="badge bg-light text-dark rounded-pill">2</span>
+    <span class="badge bg-light text-dark rounded-pill">{{character_modifier charisma }}</span>
   </li>
   <li class="list-group-item d-flex justify-content-between align-items-center">
     Performance
-    <span class="badge bg-light text-dark rounded-pill">1</span>
+    <span class="badge bg-light text-dark rounded-pill">{{character_modifier charisma }}</span>
   </li>
   <li class="list-group-item d-flex justify-content-between align-items-center">
     Persuasion
-    <span class="badge bg-light text-dark rounded-pill">1</span>
+    <span class="badge bg-light text-dark rounded-pill">{{character_modifier charisma }}</span>
   </li>
   <li class="list-group-item d-flex justify-content-between align-items-center">
     Saving Throw
-    <span class="badge bg-light text-dark rounded-pill">1</span>
+    <span class="badge bg-light text-dark rounded-pill">{{character_modifier charisma }}</span>
   </li>
 </ul>
 
@@ -232,6 +212,9 @@
     </div>
   </div>
 </div-->
+
+{{!-- Equipment Code --}}
+
 <br><br>
 <div class="card text-center">
   <div class="card-header">
@@ -253,9 +236,9 @@
     
   </div>
   <div class="card-footer text-muted">
-    Current Inventory
+   <h4>Current Inventory</h4> 
   </div>
-   <h3>Current Inventory:</h3>
+ 
 
     <div class="equipment-list">
       {{#each equipment}}
@@ -270,7 +253,152 @@
 
     </div>
 </div>
+
+{{!-- Spellbook Code --}}
+
 <br><br>
+<div class="card text-center">
+  <div class="card-header">
+   <h3>What's in your spellbook, {{name}}</h3>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Spellbook</h5>
+    <form class="form new-spell-form">
+        <input type="hidden" value="{{id}}" name="character-id-repeat" id="character-id-repeat">
+        <div class="form-group">
+          <!--label for="equipment-desc">Add New Equipment:</label-->
+          <br>
+          <textarea class="form-input" placeholder="Add new spells" id="spell-desc" name="spell-desc"></textarea>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary">Add to spellbook!</button>
+        </div>
+      </form>
+    
+  </div>
+  <div class="card-footer text-muted">
+    <h4>Current Spells</h4>
+  </div>
+
+    <div class="spell-list">
+      {{#each spellbooks}}
+        
+          <P>{{spell}}</p> 
+         <button type ="submit" class="btn btn-sm btn-danger" data-id="{{id}}">DELETE</button>
+    {{ else }}
+
+        <p>No current spells</p>
+  
+      {{/each}}
+
+    </div>
+</div>
+
+{{!-- Features and Traits Code --}}
+
+<br><br>
+<div class="card text-center">
+  <div class="card-header">
+   <h3>Let's describe your character, {{name}}</h3>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Features and Traits</h5>
+    <form class="form new-features-form">
+        <input type="hidden" value="{{id}}" name="features-character-id" id="features-character-id">
+        <div class="form-group">
+          <!--label for="equipment-desc">Add New Equipment:</label-->
+          <br>
+            <textarea class="form-input" placeholder="Add new ideals" id="ideals-desc" name="ideals-desc"></textarea>
+            <textarea class="form-input" placeholder="Add new personality traits" id="traits-desc" name="traits-desc"></textarea>
+          <br>
+            <textarea class="form-input" placeholder="Add new bonds" id="bonds-desc" name="bonds-desc"></textarea>
+            <textarea class="form-input" placeholder="Add new flaws traits" id="flaws-desc" name="flaws-desc"></textarea>
+            <br>
+            <textarea class="form-input" placeholder="Add new features" id="features-desc" name="features-desc"></textarea>
+            <textarea class="form-input" placeholder="Add new proficiencies traits" id="proficiencies-desc" name="proficiencies-desc"></textarea>
+               <br>
+            <textarea class="form-input" placeholder="Add new languages" id="languages-desc" name="languages-desc"></textarea>
+    
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary">Add to features!</button>
+        </div>
+      </form>
+    
+  </div>
+  <div class="card-footer text-muted">
+    <h4>Current Features</h4>
+  </div>
+
+    <div class="feature-list">
+      {{#each features}}
+        <h6>Ideals</h6>
+          <P>{{ideals}}</p> 
+        <h6>Personality Traits</h6>
+          <P>{{personality_traits}}</p> 
+        <h6>Bonds</h6> 
+          <P>{{bonds}}</p> 
+        <h6>Flaws</h6>
+          <P>{{flaws}}</p> 
+        <h6>Features</h6>
+          <P>{{features}}</p> 
+        <h6>Proficiencies</h6>
+          <P>{{proficiencies}}</p> 
+        <h6>Languages</h6>
+          <P>{{languages}}</p> 
+         <button type ="submit" class="btn btn-sm btn-danger" data-id="{{id}}">DELETE</button>
+    {{ else }}
+
+        <p>No current features</p>
+  
+      {{/each}}
+
+    </div>
+</div>
+<br><br>
+
+{{!-- Journal Code --}}
+
+<br><br>
+<div class="card text-center">
+  <div class="card-header">
+   <h3>What's in your explorer's journal, {{name}}</h3>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Journal</h5>
+    <form class="form new-journal-form">
+        <input type="hidden" value="{{id}}" name="journal-character-id" id="journal-character-id">
+        <div class="form-group">
+          <!--label for="equipment-desc">Add New Equipment:</label-->
+          <br>
+          <textarea class="form-input" placeholder="Add new entry" id="entry-desc" name="entry-desc"></textarea>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary">Add to explorer's notes!</button>
+        </div>
+      </form>
+    
+  </div>
+  <div class="card-footer text-muted">
+    <h4>Current Entries</h4>
+  </div>
+
+    <div class="journal-list">
+      {{#each journals}}
+        
+          <P>{{entry}}</p> 
+         <button type ="submit" class="btn btn-sm btn-danger" data-id="{{id}}">DELETE</button>
+    {{ else }}
+
+        <p>No current entries</p>
+  
+      {{/each}}
+
+    </div>
+</div>
+
+</div>
+</div>
+
+<script src="/assets/js/character.js"></script>
 <script src="/assets/js/equipment.js"></script>
-</div>
-</div>

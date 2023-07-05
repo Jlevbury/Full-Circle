@@ -1,8 +1,7 @@
-  const delButtonHandler = async (event) => {
+  const delCharacterHandler = async (event) => {
 
     if (event.target.hasAttribute('data-id')) {
       const id = event.target.getAttribute('data-id');
-        console.log(id)
       const response = await fetch(`/api/characters/${id}`, {
         method: 'DELETE',
       });
@@ -15,9 +14,13 @@
     }
   };
 
+  // Modifier Function
+
+  
+
 
 window.onload=function(){
     document
     .querySelector('.character-list')
-    .addEventListener('click', delButtonHandler);
-  }
+    .addEventListener('click', delCharacterHandler);
+  };
