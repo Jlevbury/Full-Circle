@@ -30,15 +30,17 @@ You can create and store multiple characters after logging in with an account. T
 ![login_screenshot](./public/assets/img/login.png)
 
 ## Credits
-Chase Chambers, James Levesque, Owen Warner
+Chase Chambers, James Levesque, Owen Warner, classwork, Questions answered by Luis Quicano and Mo Ager.
 
 ## License
 
 This project is covered under the MIT License
 
-
-
 ## Features
+Account Creation
+Character storage
+Rule Lookup
+Monster Lookup
 
 ## How to Contribute
 N/A
