@@ -74,28 +74,28 @@ router.get('/login', (req, res) => {
     const {email, password} = req.body;
     let errors = [];
     res.render('login',
-        { bgImage: '/assets/img/other__11_.png',
-        email,
-        password });
+    { bgImage: '/assets/img/other__11_.png',
+    email,
+    password });
 });
 
 router.post('/login', (req, res, next) => {
-    console.log(req)
     passport.authenticate('local', {
-        successRedirect: '/dashboard',
+        successRedirect: '/characters',
         failureRedirect: '/users/login',
         failureFlash: true
-    })(req, res, next)
+    })
+    (req, res, next)
 })
 
 // Logout Handle
 
-router.post('/logout', function(req, res, next) {
+router.get('/logout', function(req, res, next) {
     req.logout(function(err) {
       if (err) { return next(err); }
-      console.log('Logged out')
       req.flash('success', "Goodbye!");
-      res.redirect('/users/login');
+      req.session.destroy();
+      res.redirect('/');
     });
   });
 
