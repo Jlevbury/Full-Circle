@@ -1,450 +1,443 @@
 <div class="container">
   <div class="container border rounded border-0 shadow ">
-  <div class="col  text-center text-md-start d-flex d-sm-flex d-md-flex justify-content-center align-items-center " style="mx-auto ;">
-                    
-                        <div class="text-center me-lg-0 pe-lg-0 mb-lg-0" >
-                          <br>
-                <h2 class="  text-center ">This is the home of {{name}} the {{race}} {{character_class}}</h2>
-<!--h3>This is the home of {{name}} the {{character_class}}</h3-->
-
-<h4>Strength!</h4>
-<p id="strength">{{strength}}</p>
-
-<ul class="list-group proficiency">
-  <li class="list-group-item d-flex justify-content-between align-items-center">
-    <div class="form-check">
-      <input class="form-check-input proficiency" type="checkbox" value="">
-      <label class="form-check-label" for="checkboxAthletics">
-        Athletics
-      </label>
-    </div>
-    <span class="badge bg-light text-dark rounded-pill">{{character_modifier strength}}</span>
-  </li>
-  <li class="list-group-item d-flex justify-content-between align-items-center">
-    <div class="form-check">
-      <input class="form-check-input proficiency" type="checkbox" value="">
-      <label class="form-check-label" for="checkboxSavingThrow">
-        Saving Throw
-      </label>
-    </div>
-    <span class="badge bg-light text-dark rounded-pill">{{character_modifier strength}}</span>
-  </li>
-</ul>
-
-<h4>Dexterity!</h4>
-{{dexterity}}
-
-<ul class="list-group proficiency">
- <li class="list-group-item d-flex justify-content-between align-items-center">
-    <div class="form-check">
-      <input class="form-check-input proficiency" type="checkbox" value="">
-      <label class="form-check-label" for="checkboxSavingThrow">
-        Stealth
-      </label>
-    </div>
-    <span class="badge bg-light text-dark rounded-pill">{{character_modifier dexterity}}</span>
-  </li>
-<li class="list-group-item d-flex justify-content-between align-items-center">
-    <div class="form-check">
-      <input class="form-check-input proficiency" type="checkbox" value="">
-      <label class="form-check-label" for="checkboxSavingThrow">
-        Sleight of Hand
-      </label>
-    </div>
-    <span class="badge bg-light text-dark rounded-pill">{{character_modifier dexterity}}</span>
-  </li>
-  <li class="list-group-item d-flex justify-content-between align-items-center">
-    <div class="form-check">
-      <input class="form-check-input proficiency" type="checkbox" value="">
-        <label class="form-check-label" for="checkboxSavingThrow">
-          Acrobatics
-        </label>
-    </div>
-    <span class="badge bg-light text-dark rounded-pill">{{character_modifier dexterity}}</span>
-  </li>
- <li class="list-group-item d-flex justify-content-between align-items-center">
-    <div class="form-check">
-      <input class="form-check-input proficiency" type="checkbox" value="">
-      <label class="form-check-label" for="checkboxSavingThrow">
-        Saving Throw
-      </label>
-    </div>
-    <span class="badge bg-light text-dark rounded-pill">{{character_modifier dexterity}}</span>
-  </li>
-</ul>
-
-<h4>Constitution!</h4>
-{{constitution}}
-<ul class="list-group">
- 
-<li class="list-group-item d-flex justify-content-between align-items-center">
-    <div class="form-check">
-      <input class="form-check-input proficiency" type="checkbox" value="">
-      <label class="form-check-label" for="checkboxSavingThrow">
-       Saving Throw
-      </label>
-    </div>
-    <span class="badge bg-light text-dark rounded-pill">{{character_modifier constitution}}</span>
-  </li>
-
-<h4>Intelligence!</h4>
-{{intelligence}}
-<ul class="list-group">
-<li class="list-group-item d-flex justify-content-between align-items-center">
-    <div class="form-check">
-      <input class="form-check-input proficiency" type="checkbox" value="">
-      <label class="form-check-label" for="checkboxSavingThrow">
-        Arcana
-      </label>
-    </div>
-    <span class="badge bg-light text-dark rounded-pill">{{character_modifier intelligence}}</span>
-  </li>
-<li class="list-group-item d-flex justify-content-between align-items-center">
-    <div class="form-check">
-      <input class="form-check-input proficiency" type="checkbox" value="">
-      <label class="form-check-label" for="checkboxSavingThrow">
-        History
-      </label>
-    </div>
-    <span class="badge bg-light text-dark rounded-pill">{{character_modifier intelligence}}</span>
-  </li>
-<li class="list-group-item d-flex justify-content-between align-items-center">
-    <div class="form-check">
-      <input class="form-check-input proficiency" type="checkbox" value="">
-      <label class="form-check-label" for="checkboxSavingThrow">
-        Investigation
-      </label>
-    </div>
-    <span class="badge bg-light text-dark rounded-pill">{{character_modifier intelligence}}</span>
-  </li>
-<li class="list-group-item d-flex justify-content-between align-items-center">
-    <div class="form-check">
-      <input class="form-check-input proficiency" type="checkbox" value="">
-      <label class="form-check-label" for="checkboxSavingThrow">
-        Nature
-      </label>
-    </div>
-    <span class="badge bg-light text-dark rounded-pill">{{character_modifier intelligence}}</span>
-  </li>
-<li class="list-group-item d-flex justify-content-between align-items-center">
-    <div class="form-check">
-      <input class="form-check-input proficiency" type="checkbox" value="">
-      <label class="form-check-label" for="checkboxSavingThrow">
-        Religion
-      </label>
-    </div>
-    <span class="badge bg-light text-dark rounded-pill">{{character_modifier intelligence}}</span>
-  </li>
-</ul>
-
-<h4>Wisdom!</h4>
-{{wisdom}}
-
-<ul class="list-group">
- <li class="list-group-item d-flex justify-content-between align-items-center">
-    <div class="form-check">
-      <input class="form-check-input proficiency" type="checkbox" value="">
-      <label class="form-check-label" for="checkboxSavingThrow">
-        Animal Handling
-      </label>
-    </div>
-    <span class="badge bg-light text-dark rounded-pill">{{character_modifier wisdom}}</span>
-  </li>
- <li class="list-group-item d-flex justify-content-between align-items-center">
-    <div class="form-check">
-      <input class="form-check-input proficiency" type="checkbox" value="">
-      <label class="form-check-label" for="checkboxSavingThrow">
-        Insight
-      </label>
-    </div>
-    <span class="badge bg-light text-dark rounded-pill">{{character_modifier wisdom}}</span>
-  </li>
-   <li class="list-group-item d-flex justify-content-between align-items-center">
-    <div class="form-check">
-      <input class="form-check-input proficiency" type="checkbox" value="">
-      <label class="form-check-label" for="checkboxSavingThrow">
-        Medicine
-      </label>
-    </div>
-    <span class="badge bg-light text-dark rounded-pill">{{character_modifier wisdom}}</span>
-  </li>
- <li class="list-group-item d-flex justify-content-between align-items-center">
-    <div class="form-check">
-      <input class="form-check-input proficiency" type="checkbox" value="">
-      <label class="form-check-label" for="checkboxSavingThrow">
-        Perception
-      </label>
-    </div>
-    <span class="badge bg-light text-dark rounded-pill">{{character_modifier wisdom}}</span>
-  </li>
-  <li class="list-group-item d-flex justify-content-between align-items-center">
-    <div class="form-check">
-      <input class="form-check-input proficiency" type="checkbox" value="">
-      <label class="form-check-label" for="checkboxSavingThrow">
-        Survival
-      </label>
-    </div>
-    <span class="badge bg-light text-dark rounded-pill">{{character_modifier wisdom}}</span>
-  </li>
-   <li class="list-group-item d-flex justify-content-between align-items-center">
-    <div class="form-check">
-      <input class="form-check-input proficiency" type="checkbox" value="">
-      <label class="form-check-label" for="checkboxSavingThrow">
-        Saving Throw
-      </label>
-    </div>
-    <span class="badge bg-light text-dark rounded-pill">{{character_modifier wisdom}}</span>
-  </li>
-</ul>
-<h4>Charisma!</h4>
-  {{charisma}}
-<ul class="list-group">
-  <li class="list-group-item d-flex justify-content-between align-items-center">
-    <div class="form-check">
-      <input class="form-check-input proficiency" type="checkbox" value="">
-      <label class="form-check-label" for="checkboxSavingThrow">
-        Deception
-      </label>
-    </div>
-    <span class="badge bg-light text-dark rounded-pill">{{character_modifier charisma}}</span>
-  </li>
- <li class="list-group-item d-flex justify-content-between align-items-center">
-    <div class="form-check">
-      <input class="form-check-input proficiency" type="checkbox" value="">
-      <label class="form-check-label" for="checkboxSavingThrow">
-        Intimidation
-      </label>
-    </div>
-    <span class="badge bg-light text-dark rounded-pill">{{character_modifier charisma}}</span>
-  </li>
-   <li class="list-group-item d-flex justify-content-between align-items-center">
-    <div class="form-check">
-      <input class="form-check-input proficiency" type="checkbox" value="">
-      <label class="form-check-label" for="checkboxSavingThrow">
-        Performance
-      </label>
-    </div>
-    <span class="badge bg-light text-dark rounded-pill">{{character_modifier charisma}}</span>
-  </li>
-  <li class="list-group-item d-flex justify-content-between align-items-center">
-    <div class="form-check">
-      <input class="form-check-input proficiency" type="checkbox" value="">
-      <label class="form-check-label" for="checkboxSavingThrow">
-        Persuasion
-      </label>
-    </div>
-    <span class="badge bg-light text-dark rounded-pill">{{character_modifier charisma}}</span>
-  </li>
-  <li class="list-group-item d-flex justify-content-between align-items-center">
-    <div class="form-check">
-      <input class="form-check-input proficiency" type="checkbox" value="">
-      <label class="form-check-label" for="checkboxSavingThrow">
-        Saving Throw
-      </label>
-    </div>
-    <span class="badge bg-light text-dark rounded-pill">{{character_modifier charisma}}</span>
-  </li>
-</ul>
-
-{{!-- Equipment Code --}}
-
-<br>
-<br>
-
-<div class="card text-center">
-  <div class="card-header">
-   <h3>What's in your backpack, {{name}}</h3>
-  </div>
-  <div class="card-body">
-    <h5 class="card-title">Inventory</h5>
-    <form class="form new-equipment-form">
-        <input type="hidden" value="{{id}}" name="character-id" id="character-id">
-        <div class="form-group">
-          <br>
-          <textarea class="form-input" placeholder="Add new equipment" id="equipment-desc" name="equipment-desc"></textarea>
-        </div>
-        <div class="form-group">
-          <button type="submit" class="btn btn-primary">Add to bag!</button>
-        </div>
-      </form>
-    
-  </div>
-  <div class="card-footer text-muted">
-   <h4>Current Inventory</h4> 
-  </div>
- 
-
-    <div class="equipment-list">
-      {{#each equipment}}
-        
-          <P>{{item}}</p> 
-         <button type ="submit" class="btn btn-sm btn-danger" data-id="{{id}}">DELETE</button>
-    {{ else }}
-
-        <p>No current inventory</p>
-        
-      {{/each}}
-
-    </div>
-</div>
-
-{{!-- Spellbook Code --}}
-
-<br>
-<br>
-<div class="accordion" id="accordionExample">
-  <div class="accordion-item">
-    <h2 class="accordion-header">
-      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-        Spellbook
-      </button>
-    </h2>
-      <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
-        <div class="accordion-body">
-          <div class="card text-center">
-            <div class="card-header">
-              <h3>What's in your spellbook, {{name}}</h3>
-            </div>
-              <div class="card-body">
-                <h5 class="card-title">Spellbook</h5>
-                  <form class="form new-spell-form">
-                    <input type="hidden" value="{{id}}" name="character-id-repeat" id="character-id-repeat">
-                      <div class="form-group">
-                        <br>
-                          <textarea class="form-input" placeholder="Add new spells" id="spell-desc" name="spell-desc"></textarea>
+    <div class="col  text-center text-md-start d-flex d-sm-flex d-md-flex justify-content-center align-items-center " style="mx-auto ;">
+      <div class="text-center me-lg-0 pe-lg-0 mb-lg-0" >
+        <br>
+        <h2 class="  text-center ">This is the home of {{name}} the {{race}} {{character_class}}</h2>
+{{!-- Strength and ability scores --}}
+          <h4>Strength!</h4>
+            <p id="strength">{{strength}}</p>
+              <ul class="list-group proficiency">
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  <div class="form-check">
+                    <input class="form-check-input proficiency" type="checkbox" value="">
+                    <label class="form-check-label" for="checkboxAthletics">
+                      Athletics
+                    </label>
+                  </div>
+                  <span class="badge bg-light text-dark rounded-pill">{{character_modifier strength}}</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  <div class="form-check">
+                    <input class="form-check-input proficiency" type="checkbox" value="">
+                    <label class="form-check-label" for="checkboxSavingThrow">
+                      Saving Throw
+                    </label>
+                  </div>
+                  <span class="badge bg-light text-dark rounded-pill">{{character_modifier strength}}</span>
+                </li>
+              </ul>
+{{!-- Dexterity and Ability Scores               --}}
+              <h4>Dexterity!</h4>
+                {{dexterity}}
+                  <ul class="list-group proficiency">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                      <div class="form-check">
+                        <input class="form-check-input proficiency" type="checkbox" value="">
+                        <label class="form-check-label" for="checkboxSavingThrow">
+                          Stealth
+                        </label>
                       </div>
-                    <div class="form-group">
-                      <button type="submit" class="btn btn-primary">
-                        Add to spellbook!
-                      </button>
-                    </div>
-                  </form>  
-              </div>
-              <div class="card-footer text-muted">
-                <h4>Current Spells</h4>
-              </div>
-              <div class="spell-list">
-                {{#each spellbooks}}       
-                  <P>{{spell}}</p> 
-                    <button type ="submit" class="btn btn-sm btn-danger" data-id="{{id}}">
-                      DELETE
-                    </button>
-                      {{ else }}
-                        <p>No current spells</p>
-                      {{/each}}
-              </div> 
-          </div>
-        </div>
-      </div>
-  </div>
-</div>
-{{!-- Features and Traits Code --}}
+                      <span class="badge bg-light text-dark rounded-pill">{{character_modifier dexterity}}</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                      <div class="form-check">
+                        <input class="form-check-input proficiency" type="checkbox" value="">
+                        <label class="form-check-label" for="checkboxSavingThrow">
+                          Sleight of Hand
+                        </label>
+                      </div>
+                      <span class="badge bg-light text-dark rounded-pill">{{character_modifier dexterity}}</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                      <div class="form-check">
+                        <input class="form-check-input proficiency" type="checkbox" value="">
+                          <label class="form-check-label" for="checkboxSavingThrow">
+                            Acrobatics
+                          </label>
+                      </div>
+                      <span class="badge bg-light text-dark rounded-pill">{{character_modifier dexterity}}</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                      <div class="form-check">
+                        <input class="form-check-input proficiency" type="checkbox" value="">
+                        <label class="form-check-label" for="checkboxSavingThrow">
+                          Saving Throw
+                        </label>
+                      </div>
+                      <span class="badge bg-light text-dark rounded-pill">{{character_modifier dexterity}}</span>
+                    </li>
+                  </ul>
+{{!-- Constituion and ability scores --}}
+                  <h4>Constitution!</h4>
+                    {{constitution}}
+                      <ul class="list-group">
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                          <div class="form-check">
+                            <input class="form-check-input proficiency" type="checkbox" value="">
+                            <label class="form-check-label" for="checkboxSavingThrow">
+                              Saving Throw
+                            </label>
+                          </div>
+                          <span class="badge bg-light text-dark rounded-pill">{{character_modifier constitution}}</span>
+                        </li>
+                      </ul>
+{{!-- Intelligence and ability scores --}}                      
+                      <h4>Intelligence!</h4>
+                        {{intelligence}}
+                          <ul class="list-group">
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                              <div class="form-check">
+                                <input class="form-check-input proficiency" type="checkbox" value="">
+                                <label class="form-check-label" for="checkboxSavingThrow">
+                                  Arcana
+                                </label>
+                              </div>
+                              <span class="badge bg-light text-dark rounded-pill">{{character_modifier intelligence}}</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                              <div class="form-check">
+                                <input class="form-check-input proficiency" type="checkbox" value="">
+                                <label class="form-check-label" for="checkboxSavingThrow">
+                                  History
+                                </label>
+                              </div>
+                              <span class="badge bg-light text-dark rounded-pill">{{character_modifier intelligence}}</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                              <div class="form-check">
+                                <input class="form-check-input proficiency" type="checkbox" value="">
+                                <label class="form-check-label" for="checkboxSavingThrow">
+                                  Investigation
+                                </label>
+                              </div>
+                              <span class="badge bg-light text-dark rounded-pill">{{character_modifier intelligence}}</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                              <div class="form-check">
+                                <input class="form-check-input proficiency" type="checkbox" value="">
+                                <label class="form-check-label" for="checkboxSavingThrow">
+                                  Nature
+                                </label>
+                              </div>
+                              <span class="badge bg-light text-dark rounded-pill">{{character_modifier intelligence}}</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                              <div class="form-check">
+                                <input class="form-check-input proficiency" type="checkbox" value="">
+                                <label class="form-check-label" for="checkboxSavingThrow">
+                                  Religion
+                                </label>
+                              </div>
+                              <span class="badge bg-light text-dark rounded-pill">{{character_modifier intelligence}}</span>
+                            </li>
+                          </ul>
+{{!-- Wisdom and ability scores --}}   
+                          <h4>Wisdom!</h4>
+                          {{wisdom}}
 
-
-
-
-<br><br>
-<div class="card text-center">
-  <div class="card-header">
-   <h3>Let's describe your character, {{name}}</h3>
-  </div>
-  <div class="card-body">
-    <h5 class="card-title">Features and Traits</h5>
-    <form class="form new-features-form">
-        <input type="hidden" value="{{id}}" name="features-character-id" id="features-character-id">
-        <div class="form-group">
-          <br>
-            <textarea class="form-input" placeholder="Add new ideals" id="ideals-desc" name="ideals-desc"></textarea>
-            <textarea class="form-input" placeholder="Add new personality traits" id="traits-desc" name="traits-desc"></textarea>
-          <br>
-            <textarea class="form-input" placeholder="Add new bonds" id="bonds-desc" name="bonds-desc"></textarea>
-            <textarea class="form-input" placeholder="Add new flaws traits" id="flaws-desc" name="flaws-desc"></textarea>
-            <br>
-            <textarea class="form-input" placeholder="Add new features" id="features-desc" name="features-desc"></textarea>
-            <textarea class="form-input" placeholder="Add new proficiencies traits" id="proficiencies-desc" name="proficiencies-desc"></textarea>
-               <br>
-            <textarea class="form-input" placeholder="Add new languages" id="languages-desc" name="languages-desc"></textarea>
-    
-        </div>
-        <div class="form-group">
-          <button type="submit" class="btn btn-primary">Add to features!</button>
-        </div>
-      </form>
-    
-  </div>
-  <div class="card-footer text-muted">
-    <h4>Current Features</h4>
-  </div>
-
-    <div class="feature-list">
-      {{#each features}}
-        <h6>Ideals</h6>
-          <P>{{ideals}}</p> 
-        <h6>Personality Traits</h6>
-          <P>{{personality_traits}}</p> 
-        <h6>Bonds</h6> 
-          <P>{{bonds}}</p> 
-        <h6>Flaws</h6>
-          <P>{{flaws}}</p> 
-        <h6>Features</h6>
-          <P>{{features}}</p> 
-        <h6>Proficiencies</h6>
-          <P>{{proficiencies}}</p> 
-        <h6>Languages</h6>
-          <P>{{languages}}</p> 
-         <button type ="submit" class="btn btn-sm btn-danger" data-id="{{id}}">DELETE</button>
-    {{ else }}
-
-        <p>No current features</p>
-  
-      {{/each}}
-
-    </div>
-</div>
-<br>
-<br>
-
-{{!-- Journal Code --}}
-
-<br><br>
-<div class="card text-center">
-  <div class="card-header">
-   <h3>What's in your explorer's journal, {{name}}</h3>
-  </div>
-  <div class="card-body">
-    <h5 class="card-title">Journal</h5>
-    <form class="form new-journal-form">
-        <input type="hidden" value="{{id}}" name="journal-character-id" id="journal-character-id">
-        <div class="form-group">
-          <br>
-          <textarea class="form-input" placeholder="Add new entry" id="entry-desc" name="entry-desc"></textarea>
-        </div>
-        <div class="form-group">
-          <button type="submit" class="btn btn-primary">Add to explorer's notes!</button>
-        </div>
-      </form>
-    
-  </div>
-  <div class="card-footer text-muted">
-    <h4>Current Entries</h4>
-  </div>
-
-    <div class="journal-list">
-      {{#each journals}}
-        
-          <P>{{entry}}</p> 
-         <button type ="submit" class="btn btn-sm btn-danger" data-id="{{id}}">DELETE</button>
-    {{ else }}
-
-        <p>No current entries</p>
-  
-      {{/each}}
-
-    </div>
-</div>
-
-</div>
-</div>
+                          <ul class="list-group">
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                              <div class="form-check">
+                                <input class="form-check-input proficiency" type="checkbox" value="">
+                                <label class="form-check-label" for="checkboxSavingThrow">
+                                  Animal Handling
+                                </label>
+                              </div>
+                              <span class="badge bg-light text-dark rounded-pill">{{character_modifier wisdom}}</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                              <div class="form-check">
+                                <input class="form-check-input proficiency" type="checkbox" value="">
+                                <label class="form-check-label" for="checkboxSavingThrow">
+                                  Insight
+                                </label>
+                              </div>
+                              <span class="badge bg-light text-dark rounded-pill">{{character_modifier wisdom}}</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                              <div class="form-check">
+                                <input class="form-check-input proficiency" type="checkbox" value="">
+                                <label class="form-check-label" for="checkboxSavingThrow">
+                                  Medicine
+                                </label>
+                              </div>
+                              <span class="badge bg-light text-dark rounded-pill">{{character_modifier wisdom}}</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                              <div class="form-check">
+                                <input class="form-check-input proficiency" type="checkbox" value="">
+                                <label class="form-check-label" for="checkboxSavingThrow">
+                                  Perception
+                                </label>
+                              </div>
+                              <span class="badge bg-light text-dark rounded-pill">{{character_modifier wisdom}}</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                              <div class="form-check">
+                                <input class="form-check-input proficiency" type="checkbox" value="">
+                                <label class="form-check-label" for="checkboxSavingThrow">
+                                  Survival
+                                </label>
+                              </div>
+                              <span class="badge bg-light text-dark rounded-pill">{{character_modifier wisdom}}</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                              <div class="form-check">
+                                <input class="form-check-input proficiency" type="checkbox" value="">
+                                <label class="form-check-label" for="checkboxSavingThrow">
+                                  Saving Throw
+                                </label>
+                              </div>
+                              <span class="badge bg-light text-dark rounded-pill">{{character_modifier wisdom}}</span>
+                            </li>
+                          </ul>
+{{!-- Charisma and ability scores --}}                          
+                          <h4>Charisma!</h4>
+                            {{charisma}}
+                            <ul class="list-group">
+                              <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <div class="form-check">
+                                  <input class="form-check-input proficiency" type="checkbox" value="">
+                                  <label class="form-check-label" for="checkboxSavingThrow">
+                                    Deception
+                                  </label>
+                                </div>
+                                <span class="badge bg-light text-dark rounded-pill">{{character_modifier charisma}}</span>
+                              </li>
+                              <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <div class="form-check">
+                                  <input class="form-check-input proficiency" type="checkbox" value="">
+                                  <label class="form-check-label" for="checkboxSavingThrow">
+                                    Intimidation
+                                  </label>
+                                </div>
+                                <span class="badge bg-light text-dark rounded-pill">{{character_modifier charisma}}</span>
+                              </li>
+                              <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <div class="form-check">
+                                  <input class="form-check-input proficiency" type="checkbox" value="">
+                                  <label class="form-check-label" for="checkboxSavingThrow">
+                                    Performance
+                                  </label>
+                                </div>
+                                <span class="badge bg-light text-dark rounded-pill">{{character_modifier charisma}}</span>
+                              </li>
+                              <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <div class="form-check">
+                                  <input class="form-check-input proficiency" type="checkbox" value="">
+                                  <label class="form-check-label" for="checkboxSavingThrow">
+                                    Persuasion
+                                  </label>
+                                </div>
+                                <span class="badge bg-light text-dark rounded-pill">{{character_modifier charisma}}</span>
+                              </li>
+                              <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <div class="form-check">
+                                  <input class="form-check-input proficiency" type="checkbox" value="">
+                                  <label class="form-check-label" for="checkboxSavingThrow">
+                                    Saving Throw
+                                  </label>
+                                </div>
+                                <span class="badge bg-light text-dark rounded-pill">{{character_modifier charisma}}</span>
+                              </li>
+                            </ul>
+                            <br>
+                            <br>
+{{!-- Accordion Code --}}
+                            <div class="accordion" id="accordionExample">
+                              <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+{{!-- Equipment Code --}}
+                                    Inventory
+                                  </button>
+                                </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                                  <div class="accordion-body">
+                                    <div class="card text-center">
+                                      <div class="card-header">
+                                        <h3>What's in your backpack, {{name}}</h3>
+                                      </div>
+                                      <div class="card-body">
+                                        <h5 class="card-title">Inventory</h5>
+                                          <form class="form new-equipment-form">
+                                            <input type="hidden" value="{{id}}" name="character-id" id="character-id">
+                                            <div class="form-group">
+                                              <br>
+                                              <textarea class="form-input" placeholder="Add new equipment" id="equipment-desc" name="equipment-desc"></textarea>
+                                            </div>
+                                            <div class="form-group">
+                                              <button type="submit" class="btn btn-primary">Add to bag!</button>
+                                            </div>
+                                          </form>     
+                                      </div>
+                                      <div class="card-footer text-muted">
+                                        <h4>Current Inventory</h4> 
+                                      </div>
+                                      <div class="equipment-list">
+                                        {{#each equipment}}
+                                          <P>{{item}}</p> 
+                                          <button type ="submit" class="btn btn-sm btn-danger" data-id="{{id}}">DELETE</button>
+                                        {{ else }}
+                                          <p>No current inventory</p>
+                                        {{/each}}
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+{{!-- Spells Code --}}
+                                    Spells
+                                  </button>
+                                </h2>
+                                <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                                  <div class="accordion-body">
+                                      <div class="card text-center">
+                                        <div class="card-header">
+                                          <h3>What's in your spellbook, {{name}}</h3>
+                                        </div>
+                                        <div class="card-body">
+                                          <h5 class="card-title">Spellbook</h5>
+                                            <form class="form new-spell-form">
+                                              <input type="hidden" value="{{id}}" name="character-id-repeat" id="character-id-repeat">
+                                                <div class="form-group">
+                                                  <br>
+                                                  <textarea class="form-input" placeholder="Add new spells" id="spell-desc" name="spell-desc"></textarea>
+                                                </div>
+                                                <div class="form-group">
+                                                  <button type="submit" class="btn btn-primary">
+                                                    Add to spellbook!
+                                                  </button>
+                                                </div>
+                                            </form>  
+                                        </div>
+                                        <div class="card-footer text-muted">
+                                          <h4>Current Spells</h4>
+                                        </div>
+                                        <div class="spell-list">
+                                          {{#each spellbooks}}       
+                                            <P>{{spell}}</p> 
+                                              <button type ="submit" class="btn btn-sm btn-danger" data-id="{{id}}">
+                                                DELETE
+                                              </button>
+                                          {{ else }}
+                                              <p>No current spells</p>
+                                          {{/each}}
+                                        </div> 
+                                      </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+{{!-- Character Features Code  --}}
+                                    Character Features
+                                  </button>
+                                </h2>
+                                <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                                  <div class="accordion-body">
+                                    <div class="card text-center">
+                                      <div class="card-header">
+                                        <h3>Let's describe your character, {{name}}</h3>
+                                      </div>
+                                      <div class="card-body">
+                                        <h5 class="card-title">Features and Traits</h5>
+                                          <form class="form new-features-form">
+                                            <input type="hidden" value="{{id}}" name="features-character-id" id="features-character-id">
+                                            <div class="form-group">
+                                              <br>
+                                                <textarea class="form-input" placeholder="Add new ideals" id="ideals-desc" name="ideals-desc"></textarea>
+                                                <textarea class="form-input" placeholder="Add new personality traits" id="traits-desc" name="traits-desc"></textarea>
+                                              <br>
+                                                <textarea class="form-input" placeholder="Add new bonds" id="bonds-desc" name="bonds-desc"></textarea>
+                                                <textarea class="form-input" placeholder="Add new flaws traits" id="flaws-desc" name="flaws-desc"></textarea>
+                                              <br>
+                                                <textarea class="form-input" placeholder="Add new features" id="features-desc" name="features-desc"></textarea>
+                                                <textarea class="form-input" placeholder="Add new proficiencies traits" id="proficiencies-desc" name="proficiencies-desc"></textarea>
+                                              <br>
+                                                <textarea class="form-input" placeholder="Add new languages" id="languages-desc" name="languages-desc"></textarea>
+                                            </div>
+                                            <div class="form-group">
+                                              <button type="submit" class="btn btn-primary">Add to features!</button>
+                                            </div>
+                                          </form>
+                                      </div>
+                                      <div class="card-footer text-muted">
+                                        <h4>Current Features</h4>
+                                      </div>
+                                      <div class="feature-list">
+                                        {{#each features}}
+                                          <h6>Ideals</h6>
+                                            <P>{{ideals}}</p> 
+                                          <h6>Personality Traits</h6>
+                                            <P>{{personality_traits}}</p> 
+                                          <h6>Bonds</h6> 
+                                            <P>{{bonds}}</p> 
+                                          <h6>Flaws</h6>
+                                            <P>{{flaws}}</p> 
+                                          <h6>Features</h6>
+                                            <P>{{features}}</p> 
+                                          <h6>Proficiencies</h6>
+                                            <P>{{proficiencies}}</p> 
+                                          <h6>Languages</h6>
+                                            <P>{{languages}}</p> 
+                                          <button type ="submit" class="btn btn-sm btn-danger" data-id="{{id}}">DELETE</button>
+                                        {{ else }}
+                                          <p>No current features</p>
+                                        {{/each}}
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+{{!-- Journal Code   --}}
+                                    Journal
+                                  </button>
+                                </h2>
+                                <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                                  <div class="accordion-body">
+                                    <div class="card text-center">
+                                      <div class="card-header">
+                                        <h3>What's in your explorer's journal, {{name}}</h3>
+                                      </div>
+                                      <div class="card-body">
+                                        <h5 class="card-title">Journal</h5>
+                                        <form class="form new-journal-form">
+                                          <input type="hidden" value="{{id}}" name="journal-character-id" id="journal-character-id">
+                                            <div class="form-group">
+                                              <br>
+                                              <textarea class="form-input" placeholder="Add new entry" id="entry-desc" name="entry-desc"></textarea>
+                                            </div>
+                                            <div class="form-group">
+                                              <button type="submit" class="btn btn-primary">Add to explorer's notes!</button>
+                                            </div>
+                                        </form>
+                                      </div>
+                                      <div class="card-footer text-muted">
+                                        <h4>Current Entries</h4>
+                                      </div>
+                                      <div class="journal-list">
+                                        {{#each journals}}
+                                            <P>{{entry}}</p> 
+                                          <button type ="submit" class="btn btn-sm btn-danger" data-id="{{id}}">DELETE</button>
+                                        {{ else }}
+                                          <p>No current entries</p>
+                                        {{/each}}
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <br>
 
 <script src="/assets/js/characterDeleter.js"></script>
 <script src="/assets/js/characterAddons.js"></script>
