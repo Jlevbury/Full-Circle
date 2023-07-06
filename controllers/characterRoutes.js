@@ -18,7 +18,14 @@ router.get("/create", ensureAuthenticated, (req, res) => {
 // This code lists the characters
 
 router.get("/", ensureAuthenticated, async (req, res) => {
-	const characters = await Character.findAll();
+	const user = req.user;
+	const characters = await Character.findAll(
+		{
+		where: {
+			user_id: user.id
+		}
+	}
+	);
 	res.render("characters", {
 		title: "characterRoutes",
 		bgImage: "/assets/img/other__11_.png",
@@ -73,7 +80,7 @@ const {
 	wisdom,
 	intelligence,
 	charisma,
-} = req.body;
+} = req.body
 let errors = [];
 //Validate fields
 if (!name) {
@@ -120,18 +127,27 @@ if (errors.length > 0) {
 		logged_in: req.isAuthenticated(), 
 	});
 } else {
-	await Character.create({
-		name,
-		character_class,
-		race,
-		strength,
-		dexterity,
-		constitution,
-		wisdom,
-		intelligence,
-		charisma,
-	});
-	res.redirect("/characters");
-}
+    try {
+      const user = req.user; // Assuming the authenticated user is available in req.user
+
+      const character = await Character.create({
+        name,
+        character_class,
+        race,
+        strength,
+        dexterity,
+        constitution,
+        wisdom,
+        intelligence,
+        charisma,
+        user_id: user.id, // Attach the user ID to the character
+      });
+
+      res.redirect("/characters");
+    } catch (error) {
+      console.error(error);
+      res.redirect("/characters");
+    }
+  }
 });
 module.exports = router;

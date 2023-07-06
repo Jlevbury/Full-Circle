@@ -99,8 +99,6 @@ const newEquipmentHandler = async (event) => {
     const languages = document.querySelector('#languages-desc').value.trim();
     const character_id = document.querySelector('#character-id-repeat').value;
 
-    console.log( ideals, personality_traits, bonds, flaws, features, proficiencies, languages);
-
     if (ideals || personality_traits || bonds || flaws || features || proficiencies || languages) {
         const response = await fetch(`/api/features`, {
         method: 'POST',
