@@ -7,13 +7,17 @@ const { Character, Equipment, Spellbook, Features, Journal } = require("../model
 
 // This gets the character creation page
 
-router.get("/create", (req, res) => {
-	res.render("create",  { title: 'create', bgImage: '/assets/img/other__12_.png'});
+router.get("/create", ensureAuthenticated, (req, res) => {
+	res.render("create",  { 
+		title: 'create', 
+		bgImage: '/assets/img/other__12_.png',
+		logged_in: req.isAuthenticated(), 
+	});
 });
 
 // This code lists the characters
 
-router.get("/", async (req, res) => {
+router.get("/", ensureAuthenticated, async (req, res) => {
 	const characters = await Character.findAll();
 	res.render("characters", {
 		title: "characterRoutes",
@@ -28,7 +32,7 @@ router.get("/", async (req, res) => {
 
 // This loads individual characters
 
-router.get("/:id", async (req, res) => {
+router.get("/:id", ensureAuthenticated, async (req, res) => {
 try {
 	const characterData = await Character.findByPk(req.params.id, {
 		include: [
@@ -58,7 +62,7 @@ try {
 
 // Display Character Creation Form
 
-router.post("/create", async (req, res) => {
+router.post("/create", ensureAuthenticated, async (req, res) => {
 const {
 	name,
 	character_class,
@@ -113,6 +117,7 @@ if (errors.length > 0) {
 		wisdom,
 		intelligence,
 		charisma,
+		logged_in: req.isAuthenticated(), 
 	});
 } else {
 	await Character.create({
