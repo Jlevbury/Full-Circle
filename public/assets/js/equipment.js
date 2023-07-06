@@ -183,6 +183,30 @@ const delEntryHandler = async (event) => {
   }
 };
 
+// This code adds the proficiency bonus
+
+function addProficiency(event) {
+  event.preventDefault();
+  // Get the parent <li> element
+  var listItem = event.target.closest('li');
+
+  // Find the adjacent <span> element
+  var spanElement = listItem.querySelector('span');
+  // Get the current value from the <span>
+  var value = parseInt(spanElement.textContent, 10);
+  // Add 2 to the value
+  if (event.target.checked) {
+    // Add 2 to the value
+    value += 2;
+  } else {
+    // Subtract 2 from the value
+    value -= 2;
+  }
+  // Update the <span> with the new value
+  spanElement.textContent = value;
+}
+
+
 window.onload=function(){
   document
     .querySelector('.new-equipment-form')
@@ -215,5 +239,10 @@ window.onload=function(){
     document
     .querySelector('.journal-list')
     .addEventListener('click', delEntryHandler)
+    
+    var checkboxes = document.querySelectorAll(' input[type="checkbox"]');
+      checkboxes.forEach(function(checkbox) {
+      checkbox.addEventListener('change', addProficiency);
+});
   };
 
