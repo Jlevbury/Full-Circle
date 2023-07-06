@@ -14,13 +14,6 @@ router.get('/', (req, res) => {
 })
 });
 
-
-// Dashboard
-
-router.get('/dashboard', (req, res) => {
-    res.render('dashboard')
-});
-
 // Login
 
 router.get('/login', (req, res) => {
@@ -33,7 +26,6 @@ router.get('/login', (req, res) => {
 });
 
 router.post('/login', (req, res, next) => {
-    
     passport.authenticate('local', {
         successRedirect: '/',
         failureRedirect: '/users/login',

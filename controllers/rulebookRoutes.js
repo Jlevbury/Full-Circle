@@ -8,6 +8,7 @@ router.get("/", (req, res) => {
 	res.render("rulebook", {
 		title: "rulebook",
 		bgImage: "/assets/img/rivers__1_.png",
+		logged_in: req.isAuthenticated(),
 	});
 });
 
