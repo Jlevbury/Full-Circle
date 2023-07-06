@@ -21,6 +21,7 @@ router.get("/", async (req, res) => {
 		characters: characters.map(character => character.get({
 			plain: true
 		})),
+		logged_in: req.isAuthenticated(),
 		}
 		);
 });
@@ -47,7 +48,8 @@ try {
 	});
 	const character = characterData.get({ plain: true })
 		res.render("singleCharacter", { 
-			...character });
+			...character,
+			logged_in: req.isAuthenticated(), });
 	} catch (err) {
 		console.log(err);
 }

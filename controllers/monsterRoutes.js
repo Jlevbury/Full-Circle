@@ -5,7 +5,10 @@ const { ensureAuthenticated } = require('../config/auth');
 // This loads the monster page
 
 router.get('/', (req, res) => {
-    res.render('monsters', { title: 'monsters', bgImage: '/assets/img/other__16_.png' })
+    res.render('monsters', { 
+        title: 'monsters',
+        bgImage: '/assets/img/other__16_.png',
+        logged_in: req.isAuthenticated(), })
 });
 
 
